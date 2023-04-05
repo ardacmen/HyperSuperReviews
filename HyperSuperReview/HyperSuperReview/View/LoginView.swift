@@ -69,6 +69,7 @@ class LoginView: UIView {
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.placeholder = "Enter your email"
         textField.setLeftPaddingPoints(20)
+        textField.backgroundColor = .white
         textField.borderStyle = .roundedRect
         textField.keyboardType = .emailAddress
         textField.layer.masksToBounds = true
@@ -95,6 +96,7 @@ class LoginView: UIView {
         textField.placeholder = "Enter your password"
         textField.borderStyle = .roundedRect
         textField.setLeftPaddingPoints(20)
+        textField.backgroundColor = .white
         textField.layer.masksToBounds = true
         textField.layer.cornerRadius = 22
         textField.isSecureTextEntry = true

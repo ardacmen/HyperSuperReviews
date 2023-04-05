@@ -31,6 +31,10 @@
 		304642AD29DE27BB000B14F2 /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304642AC29DE27BB000B14F2 /* MainPageViewController.swift */; };
 		304642AF29DE27CC000B14F2 /* MainPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304642AE29DE27CC000B14F2 /* MainPageView.swift */; };
 		304642B129DE29BA000B14F2 /* TabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304642B029DE29BA000B14F2 /* TabbarController.swift */; };
+		304642B429DE2FB7000B14F2 /* MainPageCV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304642B329DE2FB7000B14F2 /* MainPageCV.swift */; };
+		304642B729DE324F000B14F2 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 304642B629DE324F000B14F2 /* Kingfisher */; };
+		304642BA29DE3299000B14F2 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 304642B929DE3299000B14F2 /* Alamofire */; };
+		304642BC29DE32C1000B14F2 /* Posts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304642BB29DE32C1000B14F2 /* Posts.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +59,8 @@
 		304642AC29DE27BB000B14F2 /* MainPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageViewController.swift; sourceTree = "<group>"; };
 		304642AE29DE27CC000B14F2 /* MainPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageView.swift; sourceTree = "<group>"; };
 		304642B029DE29BA000B14F2 /* TabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarController.swift; sourceTree = "<group>"; };
+		304642B329DE2FB7000B14F2 /* MainPageCV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageCV.swift; sourceTree = "<group>"; };
+		304642BB29DE32C1000B14F2 /* Posts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Posts.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +68,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				304642B729DE324F000B14F2 /* Kingfisher in Frameworks */,
+				304642BA29DE3299000B14F2 /* Alamofire in Frameworks */,
 				304642A029DE2024000B14F2 /* FirebaseDatabase in Frameworks */,
 				304642A429DE2024000B14F2 /* FirebaseFirestoreCombine-Community in Frameworks */,
 				3046429E29DE2024000B14F2 /* FirebaseAuth in Frameworks */,
@@ -107,6 +115,7 @@
 		3046427A29DD698E000B14F2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				304642BB29DE32C1000B14F2 /* Posts.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -114,6 +123,7 @@
 		3046427B29DD6992000B14F2 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				304642B229DE2F7F000B14F2 /* Cell */,
 				3046427F29DD69D1000B14F2 /* SplashView.swift */,
 				3046428329DD6CAA000B14F2 /* RegisterView.swift */,
 				3046428D29DD74EE000B14F2 /* LoginView.swift */,
@@ -164,6 +174,14 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		304642B229DE2F7F000B14F2 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				304642B329DE2FB7000B14F2 /* MainPageCV.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -186,6 +204,8 @@
 				304642A129DE2024000B14F2 /* FirebaseFirestore */,
 				304642A329DE2024000B14F2 /* FirebaseFirestoreCombine-Community */,
 				304642A529DE2024000B14F2 /* FirebaseStorage */,
+				304642B629DE324F000B14F2 /* Kingfisher */,
+				304642B929DE3299000B14F2 /* Alamofire */,
 			);
 			productName = HyperSuperReview;
 			productReference = 3046426329DD697D000B14F2 /* HyperSuperReview.app */;
@@ -217,6 +237,8 @@
 			mainGroup = 3046425A29DD697D000B14F2;
 			packageReferences = (
 				3046429C29DE2024000B14F2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				304642B529DE324F000B14F2 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				304642B829DE3299000B14F2 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 3046426429DD697D000B14F2 /* Products */;
 			projectDirPath = "";
@@ -251,6 +273,8 @@
 				304642AF29DE27CC000B14F2 /* MainPageView.swift in Sources */,
 				3046428429DD6CAA000B14F2 /* RegisterView.swift in Sources */,
 				3046428C29DD6EEB000B14F2 /* UIView + Divider.swift in Sources */,
+				304642B429DE2FB7000B14F2 /* MainPageCV.swift in Sources */,
+				304642BC29DE32C1000B14F2 /* Posts.swift in Sources */,
 				3046426929DD697D000B14F2 /* SceneDelegate.swift in Sources */,
 				3046428629DD6CC0000B14F2 /* RegisterViewController.swift in Sources */,
 				3046428029DD69D1000B14F2 /* SplashView.swift in Sources */,
@@ -486,6 +510,22 @@
 				minimumVersion = 10.0.0;
 			};
 		};
+		304642B529DE324F000B14F2 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+		304642B829DE3299000B14F2 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -513,6 +553,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 3046429C29DE2024000B14F2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseStorage;
+		};
+		304642B629DE324F000B14F2 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 304642B529DE324F000B14F2 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		304642B929DE3299000B14F2 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 304642B829DE3299000B14F2 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

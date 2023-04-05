@@ -70,6 +70,7 @@ class RegisterView: UIView {
         textField.setLeftPaddingPoints(20)
         textField.layer.masksToBounds = true
         textField.layer.cornerRadius = 22
+        textField.backgroundColor = .white
         textField.autocapitalizationType = .none
         textField.autocorrectionType = .no
         return textField
@@ -92,6 +93,7 @@ class RegisterView: UIView {
         textField.placeholder = "Enter your email"
         textField.setLeftPaddingPoints(20)
         textField.borderStyle = .roundedRect
+        textField.backgroundColor = .white
         textField.keyboardType = .emailAddress
         textField.layer.masksToBounds = true
         textField.layer.cornerRadius = 22
@@ -118,6 +120,7 @@ class RegisterView: UIView {
         textField.borderStyle = .roundedRect
         textField.setLeftPaddingPoints(20)
         textField.layer.masksToBounds = true
+        textField.backgroundColor = .white
         textField.layer.cornerRadius = 22
         textField.isSecureTextEntry = true
         return textField
