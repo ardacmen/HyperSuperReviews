@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>177748590514-nrl0ndbbcjnd7trk3st3qtlcfp7a4mkm.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.177748590514-nrl0ndbbcjnd7trk3st3qtlcfp7a4mkm</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDCrKpoVkHL_eYgUfjMj17NxjFxoDoXleE</string>
+	<key>GCM_SENDER_ID</key>
+	<string>177748590514</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.ardacimen.HyperSuperReview</string>
+	<key>PROJECT_ID</key>
+	<string>hypersuperreview</string>
+	<key>STORAGE_BUCKET</key>
+	<string>hypersuperreview.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:177748590514:ios:ead517014219b807fb2eab</string>
+</dict>
+</plist>

@@ -9,7 +9,7 @@ import UIKit
 
 
 class LoginViewController: UIViewController {
-
+    
     
     let mainView = LoginView()
     
@@ -21,12 +21,29 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-      
+        addAction()
+        
     }
     
-
-   
-   
-
+    func addAction()
+    {
+        mainView.LoginButton.addAction(UIAction{ [weak self] _ in
+            
+            NetworkController.shared.login(mail: self?.mainView.emailTextField.text ?? "", password: self?.mainView.passwordTextField.text ?? ""){ error in
+                if let error = error {
+                    self?.showAlert(title: "Error", message: error.localizedDescription, style: .alert, actions: [("OK", .default, nil)])
+                } else {
+                    
+                    let vc = TabbarViewController()
+                    vc.modalPresentationStyle = .fullScreen
+                    self?.present(vc, animated: true)
+                    
+                }
+            }
+            
+        }, for: .touchUpInside)
+    }
+    
+    
+    
 }

@@ -104,7 +104,7 @@ class LoginView: UIView {
     let LoginButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Register", for: .normal)
+        button.setTitle("Login", for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .medium)
         button.backgroundColor = UIColor(red: 0.22, green: 0.50, blue: 0.72, alpha: 1.0)
         button.layer.cornerRadius = 25
