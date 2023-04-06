@@ -127,5 +127,49 @@ class NetworkController
         
     }
     
+ 
+    
+    
+    enum ReviewsResult {
+        case success(status: [Bool], review: [String], film: [String], mail: [String])
+        case failure(Error)
+    }
+
+    func getReviews(completionHandler: @escaping (ReviewsResult) -> Void) {
+        let collectionRef = db.collection("reviews")
+
+        var status = [Bool]()
+        var review = [String]()
+        var film = [String]()
+        var mail = [String]()
+
+        collectionRef.getDocuments { (querySnapshot, error) in
+            if let error = error {
+                print("Error fetching documents: \(error.localizedDescription)")
+                completionHandler(.failure(error))
+                return
+            }
+
+            guard let querySnapshot = querySnapshot else {
+                print("No documents found.")
+                let error = NSError(domain: "", code: 404, userInfo: [NSLocalizedDescriptionKey: "No documents found."])
+                completionHandler(.failure(error))
+                return
+            }
+
+            for document in querySnapshot.documents {
+                let allData = document.data()
+                mail.append(allData["mail"] as? String ?? "")
+                status.append(allData["status"] as? Bool ?? false)
+                film.append(allData["film"] as? String ?? "")
+                review.append(allData["review"] as? String ?? "")
+            }
+
+            completionHandler(.success(status: status, review: review, film: film, mail: mail))
+        }
+    }
+
+
+    
     
 }

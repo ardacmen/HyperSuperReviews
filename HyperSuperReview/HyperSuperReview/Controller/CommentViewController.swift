@@ -42,7 +42,7 @@ class CommentViewController: UIViewController {
                     self.showAlert(title: "Error", message: error.localizedDescription, style: .alert, actions: [("OK", .default, nil)])
                 } else {
                     
-                    self.showAlert(title: "Success", message: error?.localizedDescription, style: .alert, actions: [("OK", .default, nil)])
+                    self.showAlert(title: "Success", message: "After Checking, It will be published", style: .alert, actions: [("OK", .default, nil)])
                     
                 }
             }

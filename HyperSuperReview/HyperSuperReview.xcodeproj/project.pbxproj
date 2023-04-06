@@ -41,6 +41,9 @@
 		30D5B9A329DEE3FB00CDBF20 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D5B9A229DEE3FB00CDBF20 /* DetailView.swift */; };
 		30D5B9A529DEFD2F00CDBF20 /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D5B9A429DEFD2F00CDBF20 /* CommentViewController.swift */; };
 		30D5B9A729DEFDF100CDBF20 /* CommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D5B9A629DEFDF100CDBF20 /* CommentView.swift */; };
+		30D5B9A929DF15F600CDBF20 /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D5B9A829DF15F600CDBF20 /* TimelineViewController.swift */; };
+		30D5B9AB29DF160500CDBF20 /* TimelineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D5B9AA29DF160500CDBF20 /* TimelineView.swift */; };
+		30D5B9AD29DF16B300CDBF20 /* ReviewCV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D5B9AC29DF16B300CDBF20 /* ReviewCV.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +76,9 @@
 		30D5B9A229DEE3FB00CDBF20 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		30D5B9A429DEFD2F00CDBF20 /* CommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
 		30D5B9A629DEFDF100CDBF20 /* CommentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentView.swift; sourceTree = "<group>"; };
+		30D5B9A829DF15F600CDBF20 /* TimelineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
+		30D5B9AA29DF160500CDBF20 /* TimelineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineView.swift; sourceTree = "<group>"; };
+		30D5B9AC29DF16B300CDBF20 /* ReviewCV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCV.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +149,7 @@
 				30D5B99C29DED2AA00CDBF20 /* ForgotPassword.swift */,
 				30D5B9A229DEE3FB00CDBF20 /* DetailView.swift */,
 				30D5B9A629DEFDF100CDBF20 /* CommentView.swift */,
+				30D5B9AA29DF160500CDBF20 /* TimelineView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -158,6 +165,7 @@
 				30D5B99E29DED2C300CDBF20 /* ForgotPasswordViewController.swift */,
 				30D5B9A029DEE3EE00CDBF20 /* DetailViewController.swift */,
 				30D5B9A429DEFD2F00CDBF20 /* CommentViewController.swift */,
+				30D5B9A829DF15F600CDBF20 /* TimelineViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -196,6 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				304642B329DE2FB7000B14F2 /* MainPageCV.swift */,
+				30D5B9AC29DF16B300CDBF20 /* ReviewCV.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -294,11 +303,13 @@
 				3046428C29DD6EEB000B14F2 /* UIView + Divider.swift in Sources */,
 				30D5B9A129DEE3EE00CDBF20 /* DetailViewController.swift in Sources */,
 				304642B429DE2FB7000B14F2 /* MainPageCV.swift in Sources */,
+				30D5B9A929DF15F600CDBF20 /* TimelineViewController.swift in Sources */,
 				304642BC29DE32C1000B14F2 /* Posts.swift in Sources */,
 				3046426929DD697D000B14F2 /* SceneDelegate.swift in Sources */,
 				3046428629DD6CC0000B14F2 /* RegisterViewController.swift in Sources */,
 				3046428029DD69D1000B14F2 /* SplashView.swift in Sources */,
 				3046428229DD69DF000B14F2 /* SplashViewController.swift in Sources */,
+				30D5B9AD29DF16B300CDBF20 /* ReviewCV.swift in Sources */,
 				304642AD29DE27BB000B14F2 /* MainPageViewController.swift in Sources */,
 				3046428829DD6EBC000B14F2 /* UIColor + Convert.swift in Sources */,
 				30D5B99D29DED2AA00CDBF20 /* ForgotPassword.swift in Sources */,
@@ -309,6 +320,7 @@
 				3046428A29DD6ED7000B14F2 /* UITextField + Padding.swift in Sources */,
 				3046429029DD7505000B14F2 /* LoginViewController.swift in Sources */,
 				30D5B9A529DEFD2F00CDBF20 /* CommentViewController.swift in Sources */,
+				30D5B9AB29DF160500CDBF20 /* TimelineView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

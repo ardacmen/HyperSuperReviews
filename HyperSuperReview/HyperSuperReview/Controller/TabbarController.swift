@@ -8,7 +8,7 @@ class TabbarViewController : UITabBarController
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        tabBar.tintColor =  UIColor.black
+        tabBar.tintColor =  UIColor.white
         setupVCs()
         
     }
@@ -26,6 +26,15 @@ class TabbarViewController : UITabBarController
         
     }
     
+    func createSecondElement() -> UIViewController{
+        
+        let rootViewController =  TimelineViewController()
+        let navController = UINavigationController(rootViewController: rootViewController)
+        rootViewController.navigationItem.title = "Timeline"
+        navController.tabBarItem.image = UIImage(systemName:  "hourglass")
+        return navController
+        
+    }
    
     
     
@@ -33,7 +42,8 @@ class TabbarViewController : UITabBarController
     func setupVCs(){
         
         viewControllers = [
-            createTabbarFirstElement()
+            createTabbarFirstElement(),
+            createSecondElement()
         ]
         
     }

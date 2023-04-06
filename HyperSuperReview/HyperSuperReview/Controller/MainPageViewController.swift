@@ -21,10 +21,6 @@ class MainPageViewController: UIViewController, UICollectionViewDelegate, UIColl
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         self.mainView.postCollectionView.delegate = self
         self.mainView.postCollectionView.dataSource = self
-      
-      
-        
-       
         navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         fetchPosts()
     }
