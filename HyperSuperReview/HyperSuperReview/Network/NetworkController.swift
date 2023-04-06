@@ -59,7 +59,7 @@ class NetworkController
         
     }
     
-    func takeImgUrl(id : String, completion: @escaping (String) -> Void) {
+    func takeImgUrl(id : Int, completion: @escaping (String) -> Void) {
         
        
         
