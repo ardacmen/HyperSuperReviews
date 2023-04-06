@@ -113,6 +113,12 @@ class NetworkController
         }
     }
     
+    func changePassword(password: String , completion: @escaping (Error?) -> Void) {
+        Auth.auth().currentUser?.updatePassword(to: password){error in
+            completion(error)
+        }
+    }
+    
     
     func saveCommentWhenClickSave(mail: String, review: String, film : String,  completion: @escaping (Error?) -> Void) {
         
@@ -126,6 +132,51 @@ class NetworkController
         }
         
     }
+    
+    func saveRequest(mail: String, request: String,  completion: @escaping (Error?) -> Void) {
+        
+        db.collection("reviews").document().setData([
+            "mail" : mail ,
+            "name" : request,
+        ]) { err in
+            completion(err)
+        }
+        
+    }
+    
+    func changeInfo(name: String,  completion: @escaping (Error?) -> Void) {
+        
+        db.collection("users").document(Auth.auth().currentUser?.email ?? "No User").setData([
+            "name" : name,
+            "mail" : Auth.auth().currentUser?.email as Any
+        ]) { err in
+            completion(err)
+        }
+        
+    }
+    
+    
+    func getDataForInfo(completion: @escaping (String?, String?) -> Void) {
+        let docRef = db.collection("users").document(Auth.auth().currentUser!.email!)
+
+        docRef.getDocument { (document, error) in
+            if let document = document {
+                if let allData = document.data() {
+                    if let name = allData["name"] as? String, let mail = allData["mail"] as? String {
+                        completion(name,mail)
+                    } else {
+                        completion(nil,nil)
+                    }
+                } else {
+                    completion(nil,nil)
+                }
+            } else {
+                print("Error getting document: \(error)")
+                completion(nil,nil)
+            }
+        }
+    }
+
     
  
     

@@ -257,7 +257,7 @@ class SettingsView: UIView {
         var padding: UIEdgeInsets = .zero
         
         let widthSize = (UIScreen.main.bounds.width - 125) / 2
-        padding.top =  0
+        padding.top =  50
         padding.left = 50
         padding.bottom = 16
         padding.right = 50

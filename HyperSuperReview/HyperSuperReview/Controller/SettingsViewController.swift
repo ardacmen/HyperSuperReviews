@@ -12,7 +12,7 @@ class SettingsViewController:   UIViewController   {
     
     let mainView = SettingsView()
     
-   
+    
     
     override func loadView() {
         self.view = mainView
@@ -27,9 +27,9 @@ class SettingsViewController:   UIViewController   {
             mainView.logoutImageView
         ]
         setupImageViews(imageViews: imageViewList)
-        
+        hideKeyboardWhenTappedAround()
         addAction()
-       
+        
         
     }
     
@@ -56,7 +56,7 @@ class SettingsViewController:   UIViewController   {
         
         if data == UIImage(systemName: "person")?.withTintColor(.white, renderingMode: .alwaysOriginal).pngData()
         {
-            let controller = RequestViewController()
+            let controller = ProfileViewController()
             self.navigationController?.pushViewController(controller, animated: true)
         }else if data ==  UIImage(systemName: "return.left")?.withTintColor(.white, renderingMode: .alwaysOriginal).pngData(){
             UserDefaults.standard.set(false, forKey: "login")
@@ -66,7 +66,8 @@ class SettingsViewController:   UIViewController   {
             navigationController.modalPresentationStyle = .overCurrentContext
             self.navigationController?.present(navigationController, animated: true, completion: nil)
         }else{
-            
+            let controller = RequestViewController()
+            self.navigationController?.pushViewController(controller, animated: true)
         }
     }
     

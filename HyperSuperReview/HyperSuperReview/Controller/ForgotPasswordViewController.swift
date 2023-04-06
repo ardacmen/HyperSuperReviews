@@ -21,6 +21,7 @@ class ForgotPasswordViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         addAction()
+        hideKeyboardWhenTappedAround()
         navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         
     }
@@ -39,6 +40,8 @@ class ForgotPasswordViewController: UIViewController {
             }
         }, for: .touchUpInside)
     }
+    
+    
     
     
     

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RequestView: UIView {
+class ChangePasswordView: UIView {
     
     
     init(){
@@ -49,7 +49,21 @@ class RequestView: UIView {
         return label
     }()
     
-    let textField : UITextField =
+    let textField1 : UITextField =
+    {
+        let tf = UITextField()
+        tf.backgroundColor = UIColor.black
+        tf.textColor = .white
+        tf.translatesAutoresizingMaskIntoConstraints = false
+        tf.clipsToBounds = true
+        tf.layer.borderColor = UIColor.white.cgColor
+        tf.layer.borderWidth = 0.25
+        tf.setLeftPaddingPoints(20)
+        tf.layer.cornerRadius = 20
+        return tf
+    }()
+    
+    let textField2 : UITextField =
     {
         let tf = UITextField()
         tf.backgroundColor = UIColor.black
@@ -66,7 +80,7 @@ class RequestView: UIView {
     let saveButton : UIButton =
     {
         let button = UIButton()
-        button.setTitle("Request", for: .normal)
+        button.setTitle("Change Password", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.backgroundColor = .systemBlue
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -78,7 +92,8 @@ class RequestView: UIView {
         let stack = UIStackView(arrangedSubviews:
                                     [
                                       titleLabel,
-                                      textField,
+                                      textField1,
+                                      textField2,
                                       saveButton
                                     ])
         stack.spacing = 32
@@ -127,11 +142,13 @@ class RequestView: UIView {
             mainVStackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: padding.top),
             mainVStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -padding.bottom),
             titleLabel.heightAnchor.constraint(equalToConstant: 32),
-            textField.heightAnchor.constraint(equalToConstant: 50),
+            textField1.heightAnchor.constraint(equalToConstant: 50),
+            textField2.heightAnchor.constraint(equalToConstant: 50),
             saveButton.heightAnchor.constraint(equalToConstant: 50)
             
         ])
     }
 }
+
 
 

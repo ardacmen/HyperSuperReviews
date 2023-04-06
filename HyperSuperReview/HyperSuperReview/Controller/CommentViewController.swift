@@ -21,6 +21,7 @@ class CommentViewController: UIViewController {
         super.viewDidLoad()
         mainView.titleLabel.text = title2
         addAction()
+        hideKeyboardWhenTappedAround()
         navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
     
