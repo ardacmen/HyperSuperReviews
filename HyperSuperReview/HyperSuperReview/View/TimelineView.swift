@@ -26,7 +26,7 @@ class TimelineView: UIView {
     let reviewCollectionView : UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
-        let width = UIScreen.main.bounds.width - 50
+        let width = UIScreen.main.bounds.width / 1.5
         layout.itemSize = CGSize(width: width, height:  300)
         layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 50, right: 10)
         layout.minimumInteritemSpacing = 1

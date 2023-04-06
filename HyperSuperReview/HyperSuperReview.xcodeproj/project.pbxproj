@@ -44,6 +44,10 @@
 		30D5B9A929DF15F600CDBF20 /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D5B9A829DF15F600CDBF20 /* TimelineViewController.swift */; };
 		30D5B9AB29DF160500CDBF20 /* TimelineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D5B9AA29DF160500CDBF20 /* TimelineView.swift */; };
 		30D5B9AD29DF16B300CDBF20 /* ReviewCV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D5B9AC29DF16B300CDBF20 /* ReviewCV.swift */; };
+		30D5B9AF29DF2D9A00CDBF20 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D5B9AE29DF2D9A00CDBF20 /* SettingsViewController.swift */; };
+		30D5B9B129DF2DB100CDBF20 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D5B9B029DF2DB100CDBF20 /* SettingsView.swift */; };
+		30D5B9B329DF33D200CDBF20 /* RequestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D5B9B229DF33D200CDBF20 /* RequestView.swift */; };
+		30D5B9B529DF33EE00CDBF20 /* RequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D5B9B429DF33EE00CDBF20 /* RequestViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,6 +83,10 @@
 		30D5B9A829DF15F600CDBF20 /* TimelineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
 		30D5B9AA29DF160500CDBF20 /* TimelineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineView.swift; sourceTree = "<group>"; };
 		30D5B9AC29DF16B300CDBF20 /* ReviewCV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCV.swift; sourceTree = "<group>"; };
+		30D5B9AE29DF2D9A00CDBF20 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		30D5B9B029DF2DB100CDBF20 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		30D5B9B229DF33D200CDBF20 /* RequestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestView.swift; sourceTree = "<group>"; };
+		30D5B9B429DF33EE00CDBF20 /* RequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +158,8 @@
 				30D5B9A229DEE3FB00CDBF20 /* DetailView.swift */,
 				30D5B9A629DEFDF100CDBF20 /* CommentView.swift */,
 				30D5B9AA29DF160500CDBF20 /* TimelineView.swift */,
+				30D5B9B029DF2DB100CDBF20 /* SettingsView.swift */,
+				30D5B9B229DF33D200CDBF20 /* RequestView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -166,6 +176,8 @@
 				30D5B9A029DEE3EE00CDBF20 /* DetailViewController.swift */,
 				30D5B9A429DEFD2F00CDBF20 /* CommentViewController.swift */,
 				30D5B9A829DF15F600CDBF20 /* TimelineViewController.swift */,
+				30D5B9AE29DF2D9A00CDBF20 /* SettingsViewController.swift */,
+				30D5B9B429DF33EE00CDBF20 /* RequestViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -299,6 +311,7 @@
 				3046426729DD697D000B14F2 /* AppDelegate.swift in Sources */,
 				304642AF29DE27CC000B14F2 /* MainPageView.swift in Sources */,
 				3046428429DD6CAA000B14F2 /* RegisterView.swift in Sources */,
+				30D5B9B529DF33EE00CDBF20 /* RequestViewController.swift in Sources */,
 				30D5B9A329DEE3FB00CDBF20 /* DetailView.swift in Sources */,
 				3046428C29DD6EEB000B14F2 /* UIView + Divider.swift in Sources */,
 				30D5B9A129DEE3EE00CDBF20 /* DetailViewController.swift in Sources */,
@@ -312,11 +325,14 @@
 				30D5B9AD29DF16B300CDBF20 /* ReviewCV.swift in Sources */,
 				304642AD29DE27BB000B14F2 /* MainPageViewController.swift in Sources */,
 				3046428829DD6EBC000B14F2 /* UIColor + Convert.swift in Sources */,
+				30D5B9B129DF2DB100CDBF20 /* SettingsView.swift in Sources */,
 				30D5B99D29DED2AA00CDBF20 /* ForgotPassword.swift in Sources */,
+				30D5B9B329DF33D200CDBF20 /* RequestView.swift in Sources */,
 				304642A929DE20F2000B14F2 /* NetworkController.swift in Sources */,
 				30D5B9A729DEFDF100CDBF20 /* CommentView.swift in Sources */,
 				30D5B99F29DED2C300CDBF20 /* ForgotPasswordViewController.swift in Sources */,
 				3046428E29DD74EE000B14F2 /* LoginView.swift in Sources */,
+				30D5B9AF29DF2D9A00CDBF20 /* SettingsViewController.swift in Sources */,
 				3046428A29DD6ED7000B14F2 /* UITextField + Padding.swift in Sources */,
 				3046429029DD7505000B14F2 /* LoginViewController.swift in Sources */,
 				30D5B9A529DEFD2F00CDBF20 /* CommentViewController.swift in Sources */,

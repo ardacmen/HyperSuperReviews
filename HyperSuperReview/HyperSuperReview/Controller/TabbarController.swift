@@ -21,7 +21,17 @@ class TabbarViewController : UITabBarController
         let rootViewController =  MainPageViewController()
         let navController = UINavigationController(rootViewController: rootViewController)
         rootViewController.navigationItem.title = "Home"
-        navController.tabBarItem.image = UIImage(systemName:  "house")
+        navController.tabBarItem.image = UIImage(systemName:  "house")?.withTintColor(.white, renderingMode: .alwaysOriginal)
+        return navController
+        
+    }
+    
+    func createTabbarThirdelement() -> UIViewController{
+        
+        let rootViewController =  SettingsViewController()
+        let navController = UINavigationController(rootViewController: rootViewController)
+        rootViewController.navigationItem.title = "Settings"
+        navController.tabBarItem.image = UIImage(systemName:  "gear")?.withTintColor(.white, renderingMode: .alwaysOriginal)
         return navController
         
     }
@@ -31,7 +41,7 @@ class TabbarViewController : UITabBarController
         let rootViewController =  TimelineViewController()
         let navController = UINavigationController(rootViewController: rootViewController)
         rootViewController.navigationItem.title = "Timeline"
-        navController.tabBarItem.image = UIImage(systemName:  "hourglass")
+        navController.tabBarItem.image = UIImage(systemName:  "hourglass")?.withTintColor(.white, renderingMode: .alwaysOriginal)
         return navController
         
     }
@@ -43,7 +53,8 @@ class TabbarViewController : UITabBarController
         
         viewControllers = [
             createTabbarFirstElement(),
-            createSecondElement()
+            createSecondElement(),
+            createTabbarThirdelement()
         ]
         
     }

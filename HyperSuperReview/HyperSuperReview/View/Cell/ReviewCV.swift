@@ -9,12 +9,14 @@ class ReviewCV: UICollectionViewCell {
         label.textColor = .white
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = .systemFont(ofSize: 16)
         return label
     }()
     
     var author: UILabel = {
         let label = UILabel()
         label.textColor = .white
+        label.font = .systemFont(ofSize: 13)
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -25,6 +27,7 @@ class ReviewCV: UICollectionViewCell {
         tw.isUserInteractionEnabled  = false
         tw.textColor = .white
         tw.backgroundColor = .black
+        tw.font = .systemFont(ofSize: 13)
         tw.translatesAutoresizingMaskIntoConstraints = false
         return tw
     }()
