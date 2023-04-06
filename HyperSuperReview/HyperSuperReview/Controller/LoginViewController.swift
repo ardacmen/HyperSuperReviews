@@ -44,6 +44,10 @@ class LoginViewController: UIViewController {
             }
             
         }, for: .touchUpInside)
+        
+        mainView.forgotButton.addAction(UIAction{ [weak self] _ in
+            self?.navigationController?.pushViewController(ForgotPasswordViewController(), animated: true)
+        }, for: .touchUpInside)
     }
     
     

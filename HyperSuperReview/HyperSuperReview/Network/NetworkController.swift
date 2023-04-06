@@ -23,13 +23,13 @@ class NetworkController
     
     
     func saveDataWhenClickRegister(mail: String, name: String, completion: @escaping (Error?) -> Void) {
-       
+        
         db.collection("users").document(Auth.auth().currentUser?.email ?? "No User").setData([
-                   "mail" : mail ,
-                   "name" : name,
-               ]) { err in
-                  completion(err)
-               }
+            "mail" : mail ,
+            "name" : name,
+        ]) { err in
+            completion(err)
+        }
         
     }
     
@@ -51,25 +51,25 @@ class NetworkController
         
         
         AF.request(url, method: .get, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
-               .validate()
-               .responseDecodable(of: [Posts].self) { response in
-                   let result = response.result.mapError { $0 as Error }
-                   completion(result)
-               }
+            .validate()
+            .responseDecodable(of: [Posts].self) { response in
+                let result = response.result.mapError { $0 as Error }
+                completion(result)
+            }
         
     }
     
     func takeImgUrl(id : Int, completion: @escaping (String) -> Void) {
         
-       
+        
         
         let postId = id
-
+        
         guard let postUrl = URL(string: "http://hypersuperprojects.com/wp-json/wp/v2/posts/\(postId)") else {
             return
             
         }
-
+        
         URLSession.shared.dataTask(with: postUrl) { (data, response, error) in
             
             guard let data = data else {
@@ -103,12 +103,16 @@ class NetworkController
                 print("Error parsing post JSON: \(error.localizedDescription)")
             }
         }.resume()
-
-        
-        
-        
-       
         
     }
+    
+    
+    func resetPassword(mail: String , completion: @escaping (Error?) -> Void) {
+        Auth.auth().sendPasswordReset(withEmail: mail){error in
+            completion(error)
+        }
+    }
+    
+    
     
 }

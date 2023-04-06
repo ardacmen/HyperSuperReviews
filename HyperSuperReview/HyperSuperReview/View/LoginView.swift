@@ -90,6 +90,27 @@ class LoginView: UIView {
         return label
     }()
     
+    let forgotButton: UIButton = {
+        let label = UIButton()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.setTitleColor(.red, for: .normal)
+        label.contentHorizontalAlignment = .right
+        label.setTitle("Forgot Password?", for: .normal)
+        label.titleLabel?.font = .systemFont(ofSize: 13)
+        return label
+    }()
+    
+    lazy var forgotButtonStack: UIStackView = {
+        let stack = UIStackView(arrangedSubviews:
+                                    [
+                                        forgotButton
+                                    ])
+        stack.spacing = 0
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        stack.isLayoutMarginsRelativeArrangement = true
+        return stack
+    }()
+    
     let passwordTextField: UITextField = {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
@@ -150,7 +171,7 @@ class LoginView: UIView {
     }()
     
     let labelledDivider : UIView = {
-        let view = UIView(label: "ya da", leftLine: true, rightLine: true)
+        let view = UIView(label: "OR", leftLine: true, rightLine: true)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -181,7 +202,7 @@ class LoginView: UIView {
     
     
     lazy var mainVStackView: UIStackView = {
-        let stack = UIStackView(arrangedSubviews: [titleStack,emailStack ,passwordStack , seperatorStack ,loginButtonStack])
+        let stack = UIStackView(arrangedSubviews: [titleStack,emailStack ,passwordStack , seperatorStack ,forgotButtonStack,loginButtonStack])
         stack.spacing = 0
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.distribution = .fill
@@ -228,7 +249,8 @@ class LoginView: UIView {
             mainVStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -padding.bottom),
             labelledDivider.leadingAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.leadingAnchor, constant: 0 ),
             labelledDivider.trailingAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.trailingAnchor, constant: 0),
-            
+            forgotButton.leadingAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.leadingAnchor, constant: 24 ),
+            forgotButton.trailingAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.trailingAnchor, constant: -24),
            
             passwordLabel.heightAnchor.constraint(equalToConstant: 17),
             emailLabel.heightAnchor.constraint(equalToConstant: 17),

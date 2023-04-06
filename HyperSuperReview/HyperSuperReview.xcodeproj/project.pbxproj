@@ -35,6 +35,8 @@
 		304642B729DE324F000B14F2 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 304642B629DE324F000B14F2 /* Kingfisher */; };
 		304642BA29DE3299000B14F2 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 304642B929DE3299000B14F2 /* Alamofire */; };
 		304642BC29DE32C1000B14F2 /* Posts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304642BB29DE32C1000B14F2 /* Posts.swift */; };
+		30D5B99D29DED2AA00CDBF20 /* ForgotPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D5B99C29DED2AA00CDBF20 /* ForgotPassword.swift */; };
+		30D5B99F29DED2C300CDBF20 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D5B99E29DED2C300CDBF20 /* ForgotPasswordViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +63,8 @@
 		304642B029DE29BA000B14F2 /* TabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarController.swift; sourceTree = "<group>"; };
 		304642B329DE2FB7000B14F2 /* MainPageCV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageCV.swift; sourceTree = "<group>"; };
 		304642BB29DE32C1000B14F2 /* Posts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Posts.swift; sourceTree = "<group>"; };
+		30D5B99C29DED2AA00CDBF20 /* ForgotPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPassword.swift; sourceTree = "<group>"; };
+		30D5B99E29DED2C300CDBF20 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +132,7 @@
 				3046428329DD6CAA000B14F2 /* RegisterView.swift */,
 				3046428D29DD74EE000B14F2 /* LoginView.swift */,
 				304642AE29DE27CC000B14F2 /* MainPageView.swift */,
+				30D5B99C29DED2AA00CDBF20 /* ForgotPassword.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -140,6 +145,7 @@
 				3046428F29DD7505000B14F2 /* LoginViewController.swift */,
 				304642AC29DE27BB000B14F2 /* MainPageViewController.swift */,
 				304642B029DE29BA000B14F2 /* TabbarController.swift */,
+				30D5B99E29DED2C300CDBF20 /* ForgotPasswordViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -281,7 +287,9 @@
 				3046428229DD69DF000B14F2 /* SplashViewController.swift in Sources */,
 				304642AD29DE27BB000B14F2 /* MainPageViewController.swift in Sources */,
 				3046428829DD6EBC000B14F2 /* UIColor + Convert.swift in Sources */,
+				30D5B99D29DED2AA00CDBF20 /* ForgotPassword.swift in Sources */,
 				304642A929DE20F2000B14F2 /* NetworkController.swift in Sources */,
+				30D5B99F29DED2C300CDBF20 /* ForgotPasswordViewController.swift in Sources */,
 				3046428E29DD74EE000B14F2 /* LoginView.swift in Sources */,
 				3046428A29DD6ED7000B14F2 /* UITextField + Padding.swift in Sources */,
 				3046429029DD7505000B14F2 /* LoginViewController.swift in Sources */,

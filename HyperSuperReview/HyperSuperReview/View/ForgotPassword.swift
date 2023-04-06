@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RegisterView: UIView {
+class ForgotPassword: UIView {
     
     
     init(){
@@ -47,34 +47,11 @@ class RegisterView: UIView {
         label.font = UIFont.systemFont(ofSize: 24, weight: .semibold)
         label.textColor = .white
         label.numberOfLines = 0
-        label.text = "Welcome 👋\nHyperSuperReview"
+        label.text = "Forgot Password?"
         return label
     }()
     
-    let nameLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.textAlignment = .center
-        label.font = UIFont.systemFont(ofSize: 18, weight: .medium)
-        label.textColor = .white
-        label.textAlignment = .left
-        label.text = "Name"
-        return label
-    }()
-    
-    let nameTextField: UITextField = {
-        let textField = UITextField()
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.placeholder = "Enter your name"
-        textField.borderStyle = .roundedRect
-        textField.setLeftPaddingPoints(20)
-        textField.layer.masksToBounds = true
-        textField.layer.cornerRadius = 22
-        textField.backgroundColor = .white
-        textField.autocapitalizationType = .none
-        textField.autocorrectionType = .no
-        return textField
-    }()
+   
     
     let emailLabel: UILabel = {
         let label = UILabel()
@@ -92,8 +69,8 @@ class RegisterView: UIView {
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.placeholder = "Enter your email"
         textField.setLeftPaddingPoints(20)
-        textField.borderStyle = .roundedRect
         textField.backgroundColor = .white
+        textField.borderStyle = .roundedRect
         textField.keyboardType = .emailAddress
         textField.layer.masksToBounds = true
         textField.layer.cornerRadius = 22
@@ -102,34 +79,14 @@ class RegisterView: UIView {
         return textField
     }()
     
-    let passwordLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.textAlignment = .center
-        label.font = UIFont.systemFont(ofSize: 18, weight: .medium)
-        label.textColor = .white
-        label.text = "Password"
-        label.textAlignment = .left
-        return label
-    }()
+   
+   
     
-    let passwordTextField: UITextField = {
-        let textField = UITextField()
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.placeholder = "Enter your password"
-        textField.borderStyle = .roundedRect
-        textField.setLeftPaddingPoints(20)
-        textField.layer.masksToBounds = true
-        textField.backgroundColor = .white
-        textField.layer.cornerRadius = 22
-        textField.isSecureTextEntry = true
-        return textField
-    }()
-    
-    let registerButton: UIButton = {
+   
+    let LoginButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Register", for: .normal)
+        button.setTitle("Reset", for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .medium)
         button.backgroundColor = UIColor(red: 0.22, green: 0.50, blue: 0.72, alpha: 1.0)
         button.layer.cornerRadius = 25
@@ -140,24 +97,8 @@ class RegisterView: UIView {
     
     
     
-    lazy var nameStack: UIStackView = {
-        let stack = UIStackView(arrangedSubviews: [nameLabel, nameTextField])
-        stack.spacing = 16
-        stack.translatesAutoresizingMaskIntoConstraints = false
-        stack.distribution = .fill
-        stack.axis = .vertical
-        stack.isLayoutMarginsRelativeArrangement = true
-        return stack
-    }()
-    lazy var passwordStack: UIStackView = {
-        let stack = UIStackView(arrangedSubviews: [passwordLabel,passwordTextField])
-        stack.spacing = 16
-        stack.translatesAutoresizingMaskIntoConstraints = false
-        stack.distribution = .fill
-        stack.axis = .vertical
-        stack.isLayoutMarginsRelativeArrangement = true
-        return stack
-    }()
+  
+    
     
     lazy var emailStack: UIStackView = {
         let stack = UIStackView(arrangedSubviews: [emailLabel, emailTextField])
@@ -169,8 +110,8 @@ class RegisterView: UIView {
         return stack
     }()
     
-    lazy var registerButtonStack: UIStackView = {
-        let stack = UIStackView(arrangedSubviews: [registerButton])
+    lazy var loginButtonStack: UIStackView = {
+        let stack = UIStackView(arrangedSubviews: [LoginButton])
         
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.distribution = .fill
@@ -180,24 +121,9 @@ class RegisterView: UIView {
         return stack
     }()
     
-    let labelledDivider : UIView = {
-        let view = UIView(label: "OR", leftLine: true, rightLine: true)
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
     
     
-    
-    lazy var seperatorStack: UIStackView = {
-        let stack = UIStackView(arrangedSubviews:
-                                    [
-                                        labelledDivider
-                                    ])
-        stack.translatesAutoresizingMaskIntoConstraints = false
-        
-        stack.isLayoutMarginsRelativeArrangement = true
-        return stack
-    }()
+  
     
     lazy var titleStack: UIStackView = {
         let stack = UIStackView(arrangedSubviews:
@@ -212,7 +138,7 @@ class RegisterView: UIView {
     
     
     lazy var mainVStackView: UIStackView = {
-        let stack = UIStackView(arrangedSubviews: [titleStack,nameStack,emailStack ,passwordStack , seperatorStack ,registerButtonStack])
+        let stack = UIStackView(arrangedSubviews: [titleStack,emailStack,loginButtonStack])
         stack.spacing = 0
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.distribution = .fill
@@ -257,38 +183,28 @@ class RegisterView: UIView {
             mainVStackView.trailingAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.trailingAnchor, constant: -padding.right),
             mainVStackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: padding.top),
             mainVStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -padding.bottom),
-            labelledDivider.leadingAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.leadingAnchor, constant: 0 ),
-            labelledDivider.trailingAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.trailingAnchor, constant: 0),
-            
-            nameLabel.heightAnchor.constraint(equalToConstant: 17),
-            passwordLabel.heightAnchor.constraint(equalToConstant: 17),
+
+           
+        
             emailLabel.heightAnchor.constraint(equalToConstant: 17),
-            
-            nameTextField.heightAnchor.constraint(equalToConstant: 44),
-            passwordTextField.heightAnchor.constraint(equalToConstant: 44),
             emailTextField.heightAnchor.constraint(equalToConstant: 44),
-            
-            registerButton.topAnchor.constraint(equalTo: labelledDivider.bottomAnchor, constant: 64),
-            labelledDivider.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 32),
+            LoginButton.heightAnchor.constraint(equalToConstant: 50),
             
             
             
-            passwordLabel.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: 32),
-            emailLabel.topAnchor.constraint(equalTo: nameTextField.bottomAnchor, constant: 32),
-            nameLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 32),
-            registerButton.heightAnchor.constraint(equalToConstant: 50),
+            emailLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor,constant: 64),
+            emailTextField.topAnchor.constraint(equalTo: emailLabel.bottomAnchor, constant: 16),
+            LoginButton.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: 64),
             
-            nameTextField.leadingAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.leadingAnchor, constant: 24),
-            nameTextField.trailingAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.trailingAnchor, constant: -24),
+           
             
             emailTextField.leadingAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.leadingAnchor, constant: 24),
             emailTextField.trailingAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.trailingAnchor, constant: -24),
             
-            passwordTextField.leadingAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.leadingAnchor, constant: 24),
-            passwordTextField.trailingAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.trailingAnchor, constant: -24),
             
-            registerButton.leadingAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.leadingAnchor, constant: 48),
-            registerButton.trailingAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.trailingAnchor, constant: -48),
+            
+            LoginButton.leadingAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.leadingAnchor, constant: 48),
+            LoginButton.trailingAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.trailingAnchor, constant: -48),
             
         ])
         
