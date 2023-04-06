@@ -69,6 +69,7 @@ class RegisterView: UIView {
         textField.borderStyle = .roundedRect
         textField.setLeftPaddingPoints(20)
         textField.layer.masksToBounds = true
+        textField.textColor = .black
         textField.layer.cornerRadius = 22
         textField.backgroundColor = .white
         textField.autocapitalizationType = .none
@@ -93,6 +94,7 @@ class RegisterView: UIView {
         textField.placeholder = "Enter your email"
         textField.setLeftPaddingPoints(20)
         textField.borderStyle = .roundedRect
+        textField.textColor = .black
         textField.backgroundColor = .white
         textField.keyboardType = .emailAddress
         textField.layer.masksToBounds = true
@@ -119,6 +121,7 @@ class RegisterView: UIView {
         textField.placeholder = "Enter your password"
         textField.borderStyle = .roundedRect
         textField.setLeftPaddingPoints(20)
+        textField.textColor = .black
         textField.layer.masksToBounds = true
         textField.backgroundColor = .white
         textField.layer.cornerRadius = 22
@@ -162,6 +165,7 @@ class RegisterView: UIView {
     lazy var emailStack: UIStackView = {
         let stack = UIStackView(arrangedSubviews: [emailLabel, emailTextField])
         stack.spacing = 16
+        
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.distribution = .fill
         stack.axis = .vertical

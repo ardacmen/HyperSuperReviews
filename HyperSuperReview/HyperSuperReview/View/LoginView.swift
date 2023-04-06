@@ -74,6 +74,7 @@ class LoginView: UIView {
         textField.keyboardType = .emailAddress
         textField.layer.masksToBounds = true
         textField.layer.cornerRadius = 22
+        textField.textColor = .black
         textField.autocapitalizationType = .none
         textField.autocorrectionType = .no
         return textField
@@ -121,6 +122,7 @@ class LoginView: UIView {
         textField.layer.masksToBounds = true
         textField.layer.cornerRadius = 22
         textField.isSecureTextEntry = true
+        textField.textColor = .black
         return textField
     }()
     

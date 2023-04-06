@@ -24,7 +24,7 @@ class LoginViewController: UIViewController {
         addAction()
         self.mainView.emailTextField.text = "ardacmen@gmail.com"
         self.mainView.passwordTextField.text = "Ardabjk1903"
-        
+        navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
     
     func addAction()

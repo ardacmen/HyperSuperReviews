@@ -73,6 +73,7 @@ class ForgotPassword: UIView {
         textField.borderStyle = .roundedRect
         textField.keyboardType = .emailAddress
         textField.layer.masksToBounds = true
+        textField.textColor = .black
         textField.layer.cornerRadius = 22
         textField.autocapitalizationType = .none
         textField.autocorrectionType = .no
