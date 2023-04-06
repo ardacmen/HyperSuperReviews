@@ -114,5 +114,18 @@ class NetworkController
     }
     
     
+    func saveCommentWhenClickSave(mail: String, review: String, film : String,  completion: @escaping (Error?) -> Void) {
+        
+        db.collection("reviews").document().setData([
+            "mail" : mail ,
+            "film" : film,
+            "review" : review,
+            "status" : false
+        ]) { err in
+            completion(err)
+        }
+        
+    }
+    
     
 }

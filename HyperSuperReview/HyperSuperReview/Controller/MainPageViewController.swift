@@ -17,7 +17,7 @@ class MainPageViewController: UIViewController, UICollectionViewDelegate, UIColl
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        navigationItem.title = "Films"
+        navigationItem.title = "Loading..."
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         self.mainView.postCollectionView.delegate = self
         self.mainView.postCollectionView.dataSource = self
@@ -90,6 +90,7 @@ extension MainPageViewController {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = mainView.postCollectionView.dequeueReusableCell(withReuseIdentifier: MainPageCollectionViewCell.identifier, for: indexPath) as! MainPageCollectionViewCell
         if img.count == posts.count {
+            navigationItem.title = "Films"
             cell.imageView.kf.indicatorType = .activity
             cell.imageView.contentMode = .scaleToFill
             cell.label.text = cleanHTMLTags(posts[indexPath.row].title?.rendered ?? "")
