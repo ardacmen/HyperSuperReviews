@@ -1,5 +1,5 @@
 # Hypersuperprojects
-# Hypersuperprojects is a film review app and website that allows users to browse and search for movies, read reviews, and create their own reviews. The app is built using Alamofire, Kingfisher, MVC architecture, programmatic UI, Firebase, and Wordpress REST API. The website is built using Wordpress.
+Hypersuperprojects is a film review app and website that allows users to browse and search for movies, read reviews, and create their own reviews. The app is built using Alamofire, Kingfisher, MVC architecture, programmatic UI, Firebase, and Wordpress REST API. The website is built using Wordpress.
 
 #Features
 - Browse and search for movies
