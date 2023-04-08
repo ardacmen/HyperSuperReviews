@@ -42,7 +42,7 @@ class NetworkController
     
     func fetchPost(completion: @escaping (Result<[Posts], Error>) -> Void){
         
-        let url = "http://www.hypersuperprojects.com/wp-json/wp/v2/posts?per_page=100"
+        let url = "http://www.hypersuperprojects.com/wp-json/wp/v2/posts?_embed"
         let headers: HTTPHeaders = [
             "content-type": "application/json",
         ]
@@ -120,9 +120,11 @@ class NetworkController
     }
     
     
-    func saveCommentWhenClickSave(mail: String, review: String, film : String,  completion: @escaping (Error?) -> Void) {
+    func saveCommentWhenClickSave(imgUrl : String, starRate: Int, mail: String, review: String, film : String,  completion: @escaping (Error?) -> Void) {
         
         db.collection("reviews").document().setData([
+            "url" : imgUrl,
+            "rate" : starRate,
             "mail" : mail ,
             "film" : film,
             "review" : review,
@@ -158,7 +160,7 @@ class NetworkController
     
     func getDataForInfo(completion: @escaping (String?, String?) -> Void) {
         let docRef = db.collection("users").document(Auth.auth().currentUser!.email!)
-
+        
         docRef.getDocument { (document, error) in
             if let document = document {
                 if let allData = document.data() {
@@ -171,56 +173,59 @@ class NetworkController
                     completion(nil,nil)
                 }
             } else {
-                print("Error getting document: \(error)")
+                print("Error getting document: \(String(describing: error))")
                 completion(nil,nil)
             }
         }
     }
-
     
- 
+    
+    
     
     
     enum ReviewsResult {
-        case success(status: [Bool], review: [String], film: [String], mail: [String])
+        case success(status: [Bool], review: [String], film: [String], mail: [String], url: [String], rate: [Int])
         case failure(Error)
     }
-
+    
     func getReviews(completionHandler: @escaping (ReviewsResult) -> Void) {
         let collectionRef = db.collection("reviews")
-
+        
         var status = [Bool]()
         var review = [String]()
         var film = [String]()
         var mail = [String]()
-
+        var url = [String]()
+        var rate = [Int]()
         collectionRef.getDocuments { (querySnapshot, error) in
             if let error = error {
                 print("Error fetching documents: \(error.localizedDescription)")
                 completionHandler(.failure(error))
                 return
             }
-
+            
             guard let querySnapshot = querySnapshot else {
                 print("No documents found.")
                 let error = NSError(domain: "", code: 404, userInfo: [NSLocalizedDescriptionKey: "No documents found."])
                 completionHandler(.failure(error))
                 return
             }
-
+            
             for document in querySnapshot.documents {
                 let allData = document.data()
                 mail.append(allData["mail"] as? String ?? "")
                 status.append(allData["status"] as? Bool ?? false)
                 film.append(allData["film"] as? String ?? "")
                 review.append(allData["review"] as? String ?? "")
+                url.append(allData["url"] as? String ?? "")
+                rate.append(allData["rate"] as? Int ?? 5)
             }
-
-            completionHandler(.success(status: status, review: review, film: film, mail: mail))
+            
+            completionHandler(.success(status: status, review: review, film: film, mail: mail, url : url , rate : rate))
         }
     }
-
-
+    
+    
     
     
 }

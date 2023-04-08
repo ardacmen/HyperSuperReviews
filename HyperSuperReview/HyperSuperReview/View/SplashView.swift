@@ -75,13 +75,17 @@ class SplashView: UIView {
     
     lazy var mainVStackView: UIStackView = {
         let stack = UIStackView(arrangedSubviews: [titleLabel, registerButton, loginButton])
-        stack.spacing = 15
+        stack.spacing = 30
         stack.translatesAutoresizingMaskIntoConstraints = false
-        stack.distribution = .fillProportionally
+        stack.distribution = .fill
         stack.axis = .vertical
         stack.isLayoutMarginsRelativeArrangement = true
         return stack
     }()
+    
+ 
+    
+  
     
     private func setupSubviews() {
         addSubview(scrollView)
@@ -119,6 +123,10 @@ class SplashView: UIView {
             mainVStackView.trailingAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.trailingAnchor, constant: -padding.right),
             mainVStackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: UIScreen.main.bounds.height / 4),
             mainVStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -padding.bottom),
+            
+            loginButton.heightAnchor.constraint(equalToConstant: 50),
+            registerButton.heightAnchor.constraint(equalToConstant: 50),
+            
             
         ])
     }

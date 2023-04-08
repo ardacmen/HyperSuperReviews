@@ -37,6 +37,7 @@ class DetailViewController: UIViewController {
     
     @objc func addButtonTapped() {
         let vc = CommentViewController()
+        vc.imgUrl = self.img
         vc.title2 = cleanHTMLTags(post[0].title?.rendered ?? "")
         self.navigationController?.pushViewController(vc, animated: true)
     }

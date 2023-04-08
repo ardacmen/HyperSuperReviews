@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import Kingfisher
 class TimelineViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
     
@@ -15,6 +15,8 @@ class TimelineViewController: UIViewController, UICollectionViewDelegate, UIColl
     var review = [String]()
     var film = [String]()
     var mail = [String()]
+    var url = [String]()
+    var star = [Int]()
     
     override func loadView() {
         self.view = mainView
@@ -40,11 +42,13 @@ class TimelineViewController: UIViewController, UICollectionViewDelegate, UIColl
        
         NetworkController.shared.getReviews { result in
             switch result {
-            case .success(let status, let review, let film, let mail):
+            case .success(let status, let review, let film, let mail , let url, let rate):
                 self.status = status
                 self.review = review
                 self.film = film
+                self.url = url
                 self.mail = mail
+                self.star = rate
                 self.mainView.reviewCollectionView.reloadData()
             case .failure(let error):
                 self.showAlert(title: "Error", message: error.localizedDescription, style: .alert, actions: [("OK", .default, nil)])
@@ -69,9 +73,25 @@ extension TimelineViewController
         if mail.count > indexPath.row && film.count > indexPath.row && status.count > indexPath.row && review.count > indexPath.row
         {
             if status[indexPath.row] == true{
-                cell.author.text = "Author : " + mail[indexPath.row]
-                cell.film.text = "Film : " + film[indexPath.row]
-                cell.content.text = "Review : " + review[indexPath.row]
+                cell.author.text = "Author :\n" + mail[indexPath.row]
+                cell.filmName.text = "Film :\n" + film[indexPath.row]
+                
+                if review[indexPath.row].count > 70 {
+                    let reviewText = review[indexPath.row]
+                    let spaceIndex = reviewText.index(reviewText.startIndex, offsetBy: 70, limitedBy: reviewText.endIndex) ?? reviewText.endIndex
+                    let truncatedText = reviewText[..<spaceIndex].trimmingCharacters(in: .whitespacesAndNewlines)
+                    let readMoreText = "\nRead More"
+                    let attributedReadMoreText = NSAttributedString(string: readMoreText, attributes: [NSAttributedString.Key.foregroundColor: UIColor.blue])
+                    let attributedText = NSMutableAttributedString(string: truncatedText, attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+                    attributedText.append(attributedReadMoreText)
+                    cell.content.attributedText = attributedText
+                } else {
+                    cell.content.text = "Review :\n" + review[indexPath.row]
+                    cell.content.textColor = .white
+                }
+
+
+                cell.image.kf.setImage(with: URL(string: url[indexPath.row]))
             }
         }
        

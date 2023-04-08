@@ -143,16 +143,27 @@ class DetailView: UIView {
         return stack
     }()
     
-    
+    lazy var allContent: UIStackView = {
+        let stack = UIStackView(arrangedSubviews:
+                                    [
+                                        imageViewStack, content
+                                    ])
+        stack.spacing = 8
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        stack.distribution = .fillEqually
+        stack.axis = .vertical
+        stack.isLayoutMarginsRelativeArrangement = true
+        return stack
+    }()
     
     lazy var mainVStackView: UIStackView = {
         let stack = UIStackView(arrangedSubviews:
                                     [
-                                       title,dateAndCategory,imageViewStack, contentStack
+                                       title,dateAndCategory,allContent
                                     ])
         stack.spacing = 16
         stack.translatesAutoresizingMaskIntoConstraints = false
-        stack.distribution = .fillProportionally
+        stack.distribution = .fill
         stack.axis = .vertical
         stack.isLayoutMarginsRelativeArrangement = true
         return stack
@@ -188,7 +199,7 @@ class DetailView: UIView {
             contentView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: 0),
             contentView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 0),
             contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: 0),
-            contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: 0),
+
             contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor, constant: 0),
             
             mainVStackView.leadingAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.leadingAnchor, constant: padding.left),
@@ -198,8 +209,8 @@ class DetailView: UIView {
             
             title.heightAnchor.constraint(equalToConstant: 28),
             date.heightAnchor.constraint(equalToConstant: 17),
-            imageView.heightAnchor.constraint(equalToConstant: 350),
-            content.heightAnchor.constraint(equalToConstant: 390)
+            
+            allContent.heightAnchor.constraint(equalToConstant: 550)
             
             
         ])

@@ -72,17 +72,62 @@ class CommentView: UIView {
         return button
     }()
     
+    let star1: StarButton = {
+        let button = StarButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
+    let star2: StarButton = {
+        let button = StarButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
+    let star3: StarButton = {
+        let button = StarButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
+    let star4: StarButton = {
+        let button = StarButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
+    let star5: StarButton = {
+        let button = StarButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    lazy var starStackView: UIStackView = {
+        let stack = UIStackView(arrangedSubviews: [
+        star1,
+        star2,
+        star3,
+        star4,
+        star5
+        ])
+        stack.spacing = 10
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        stack.distribution = .fillEqually
+        stack.axis = .horizontal
+        stack.isLayoutMarginsRelativeArrangement = true
+        return stack
+    }()
     
     lazy var mainVStackView: UIStackView = {
         let stack = UIStackView(arrangedSubviews:
                                     [
                                       titleLabel,
                                       textView,
-                                      saveButton
+                                      saveButton,
+                                      starStackView
                                     ])
         stack.spacing = 32
         stack.translatesAutoresizingMaskIntoConstraints = false
-        stack.distribution = .fillProportionally
+        stack.distribution = .fill
         stack.axis = .vertical
         stack.isLayoutMarginsRelativeArrangement = true
         return stack
@@ -102,7 +147,7 @@ class CommentView: UIView {
         
         padding.top =  16
         padding.left = 16
-        padding.bottom = 16
+        padding.bottom = 32
         padding.right = 16
         
         
@@ -127,7 +172,12 @@ class CommentView: UIView {
             mainVStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -padding.bottom),
             titleLabel.heightAnchor.constraint(equalToConstant: 32),
             textView.heightAnchor.constraint(equalToConstant: 400),
-            saveButton.heightAnchor.constraint(equalToConstant: 50)
+            saveButton.heightAnchor.constraint(equalToConstant: 50),
+            star1.heightAnchor.constraint(equalToConstant: 70),
+            star2.heightAnchor.constraint(equalToConstant: 70),
+            star3.heightAnchor.constraint(equalToConstant: 70),
+            star4.heightAnchor.constraint(equalToConstant: 70),
+            star5.heightAnchor.constraint(equalToConstant: 70),
             
         ])
     }

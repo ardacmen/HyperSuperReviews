@@ -23,6 +23,7 @@ class ChangePasswordViewController: UIViewController {
         super.viewDidLoad()
         addAction()
         hideKeyboardWhenTappedAround()
+        mainView.titleLabel.text = "Change Password"
     }
     
     func addAction()

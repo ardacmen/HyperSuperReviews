@@ -30,6 +30,8 @@
 		304642B729DE324F000B14F2 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 304642B629DE324F000B14F2 /* Kingfisher */; };
 		304642BA29DE3299000B14F2 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 304642B929DE3299000B14F2 /* Alamofire */; };
 		304642BC29DE32C1000B14F2 /* Posts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304642BB29DE32C1000B14F2 /* Posts.swift */; };
+		30D4C2C129E1B0F900CAF3AB /* CustomStarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D4C2C029E1B0F900CAF3AB /* CustomStarButton.swift */; };
+		30D4C2C329E1CFF700CAF3AB /* MainPageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D4C2C229E1CFF700CAF3AB /* MainPageModel.swift */; };
 		30D5B99D29DED2AA00CDBF20 /* ForgotPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D5B99C29DED2AA00CDBF20 /* ForgotPassword.swift */; };
 		30D5B99F29DED2C300CDBF20 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D5B99E29DED2C300CDBF20 /* ForgotPasswordViewController.swift */; };
 		30D5B9A129DEE3EE00CDBF20 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D5B9A029DEE3EE00CDBF20 /* DetailViewController.swift */; };
@@ -76,6 +78,8 @@
 		304642B029DE29BA000B14F2 /* TabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarController.swift; sourceTree = "<group>"; };
 		304642B329DE2FB7000B14F2 /* MainPageCV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageCV.swift; sourceTree = "<group>"; };
 		304642BB29DE32C1000B14F2 /* Posts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Posts.swift; sourceTree = "<group>"; };
+		30D4C2C029E1B0F900CAF3AB /* CustomStarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomStarButton.swift; sourceTree = "<group>"; };
+		30D4C2C229E1CFF700CAF3AB /* MainPageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageModel.swift; sourceTree = "<group>"; };
 		30D5B99C29DED2AA00CDBF20 /* ForgotPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPassword.swift; sourceTree = "<group>"; };
 		30D5B99E29DED2C300CDBF20 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		30D5B9A029DEE3EE00CDBF20 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -146,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				304642BB29DE32C1000B14F2 /* Posts.swift */,
+				30D4C2C229E1CFF700CAF3AB /* MainPageModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -153,6 +158,7 @@
 		3046427B29DD6992000B14F2 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				30D4C2BF29E1B0DD00CAF3AB /* Custom Element */,
 				304642B229DE2F7F000B14F2 /* Cell */,
 				3046427F29DD69D1000B14F2 /* SplashView.swift */,
 				3046428329DD6CAA000B14F2 /* RegisterView.swift */,
@@ -228,6 +234,14 @@
 				30D5B9AC29DF16B300CDBF20 /* ReviewCV.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		30D4C2BF29E1B0DD00CAF3AB /* Custom Element */ = {
+			isa = PBXGroup;
+			children = (
+				30D4C2C029E1B0F900CAF3AB /* CustomStarButton.swift */,
+			);
+			path = "Custom Element";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -315,6 +329,7 @@
 				304642AB29DE2458000B14F2 /* ViewController + Alert.swift in Sources */,
 				304642B129DE29BA000B14F2 /* TabbarController.swift in Sources */,
 				3046426729DD697D000B14F2 /* AppDelegate.swift in Sources */,
+				30D4C2C129E1B0F900CAF3AB /* CustomStarButton.swift in Sources */,
 				304642AF29DE27CC000B14F2 /* MainPageView.swift in Sources */,
 				3046428429DD6CAA000B14F2 /* RegisterView.swift in Sources */,
 				30D5B9B529DF33EE00CDBF20 /* RequestViewController.swift in Sources */,
@@ -328,6 +343,7 @@
 				3046426929DD697D000B14F2 /* SceneDelegate.swift in Sources */,
 				3046428629DD6CC0000B14F2 /* RegisterViewController.swift in Sources */,
 				3046428029DD69D1000B14F2 /* SplashView.swift in Sources */,
+				30D4C2C329E1CFF700CAF3AB /* MainPageModel.swift in Sources */,
 				3046428229DD69DF000B14F2 /* SplashViewController.swift in Sources */,
 				30D5B9AD29DF16B300CDBF20 /* ReviewCV.swift in Sources */,
 				304642AD29DE27BB000B14F2 /* MainPageViewController.swift in Sources */,

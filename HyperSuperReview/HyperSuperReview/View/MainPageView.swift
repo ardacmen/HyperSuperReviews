@@ -60,6 +60,8 @@ class MainPageView: UIView {
         return imageView
     }()
     
+   
+    
     lazy var mainVStackView: UIStackView = {
         let stack = UIStackView(arrangedSubviews:
                                     [
@@ -67,7 +69,7 @@ class MainPageView: UIView {
                                     ])
         stack.spacing = 0
         stack.translatesAutoresizingMaskIntoConstraints = false
-        stack.distribution = .fillProportionally
+        stack.distribution = .fill
         stack.axis = .vertical
         stack.isLayoutMarginsRelativeArrangement = true
         return stack
@@ -111,10 +113,9 @@ class MainPageView: UIView {
             postCollectionView.topAnchor.constraint(equalTo: contentView.topAnchor),
             postCollectionView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
             postCollectionView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            postCollectionView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
+            postCollectionView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             
-            
-            
+           
             
         ])
     }

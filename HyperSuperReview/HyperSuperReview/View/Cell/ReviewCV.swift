@@ -4,12 +4,21 @@ class ReviewCV: UICollectionViewCell {
     
     static let identifier = "ReviewCV"
     
-    var film: UILabel = {
+    
+    var image: UIImageView = {
+        let label = UIImageView()
+        label.clipsToBounds = true
+        label.layer.cornerRadius = 10
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    var filmName: UILabel = {
         let label = UILabel()
         label.textColor = .white
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .systemFont(ofSize: 16)
+        label.font = .systemFont(ofSize: 13)
         return label
     }()
     
@@ -32,16 +41,32 @@ class ReviewCV: UICollectionViewCell {
         return tw
     }()
     
-    
-    
-    lazy var mainVStackView: UIStackView = {
-        let stack = UIStackView(arrangedSubviews: [author,
-                                                   film,
-                                                  content])
+    lazy var leftside: UIStackView = {
+        let stack = UIStackView(arrangedSubviews: [image])
         stack.spacing = 10
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.distribution = .fillProportionally
         stack.axis = .vertical
+        stack.isLayoutMarginsRelativeArrangement = true
+        return stack
+    }()
+    
+    lazy var rightside: UIStackView = {
+        let stack = UIStackView(arrangedSubviews: [author,filmName,content])
+        stack.spacing = 15
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        stack.distribution = .fill
+        stack.axis = .vertical
+        stack.isLayoutMarginsRelativeArrangement = true
+        return stack
+    }()
+    
+    lazy var mainVStackView: UIStackView = {
+        let stack = UIStackView(arrangedSubviews: [leftside,rightside])
+        stack.spacing = 10
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        stack.distribution = .fillEqually
+        stack.axis = .horizontal
         stack.isLayoutMarginsRelativeArrangement = true
         return stack
     }()
@@ -63,9 +88,7 @@ class ReviewCV: UICollectionViewCell {
             mainVStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             mainVStackView.topAnchor.constraint(equalTo: contentView.topAnchor),
             mainVStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
-            author.heightAnchor.constraint(equalToConstant: 40),
-            film.heightAnchor.constraint(equalToConstant: 40),
-            content.heightAnchor.constraint(equalToConstant: 200)
+            image.heightAnchor.constraint(equalToConstant: 200)
         ])
     }
     
