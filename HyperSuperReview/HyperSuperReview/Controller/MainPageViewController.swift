@@ -7,11 +7,6 @@ class MainPageViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     let mainView = MainPageView()
     var posts = [Posts]()
-    var id = [Int]()
-    var img = [String]()
-    var searchedId = [Int]()
-    var searchedImg = [String]()
-    
     var searching = false
     var searchedPosts = [Posts]()
     let searchController = UISearchController(searchResultsController: nil)
@@ -47,49 +42,10 @@ class MainPageViewController: UIViewController, UICollectionViewDelegate, UIColl
         
     }
     
-    func imgFetcher() {
-        for i in 0..<posts.count {
-            id.append(posts[i].id ?? 0)
-        }
-        
-        if id.count > 0 {
-            var fetchedImages = [String?](repeating: nil, count: id.count)
-            for i in 0..<id.count {
-                NetworkController.shared.takeImgUrl(id: id[i]) { imgUrl in
-                    fetchedImages[i] = imgUrl
-                    
-                    if fetchedImages.allSatisfy({ $0 != nil }) {
-                        self.img = fetchedImages.compactMap { $0 }
-                        DispatchQueue.main.async {
-                            self.mainView.postCollectionView.reloadData()
-                        }
-                    }
-                }
-            }
-        }
-    }
     
-    func imgFetcherforSearched() {
-        for i in 0..<searchedPosts.count {
-            searchedId.append(searchedPosts[i].id ?? 0)
-        }
-        
-        if searchedId.count > 0 {
-            var fetchedImages = [String?](repeating: nil, count: searchedId.count)
-            for i in 0..<searchedId.count {
-                NetworkController.shared.takeImgUrl(id: searchedId[i]) { imgUrl in
-                    fetchedImages[i] = imgUrl
-                    
-                    if fetchedImages.allSatisfy({ $0 != nil }) {
-                        self.searchedImg = fetchedImages.compactMap { $0 }
-                        DispatchQueue.main.async {
-                            self.mainView.postCollectionView.reloadData()
-                        }
-                    }
-                }
-            }
-        }
-    }
+    
+    
+    
     
     
     
@@ -98,7 +54,7 @@ class MainPageViewController: UIViewController, UICollectionViewDelegate, UIColl
             switch result {
             case .success(let posts):
                 self.posts = posts
-                self.imgFetcher()
+                self.mainView.postCollectionView.reloadData()
             case .failure(let error):
                 print("Error fetching posts: \(error)")
             }
@@ -120,11 +76,11 @@ extension MainPageViewController {
         
         
         let selectedItem = posts[indexPath.row]
-        let selectedImg = img[indexPath.row]
+        let selectedImg = posts[indexPath.row].yoast_head_json?.og_image?[0].url
         let detailsVC = DetailViewController()
         
         detailsVC.post.append(selectedItem)
-        detailsVC.img = selectedImg
+        detailsVC.img = selectedImg ?? ""
         navigationController?.pushViewController(detailsVC, animated: true)
         
     }
@@ -137,25 +93,23 @@ extension MainPageViewController {
         
         if searching
         {
-            if searchedImg.count == searchedPosts.count
-            {
-                navigationItem.title = "Films"
-                cell.imageView.kf.indicatorType = .activity
-                cell.imageView.contentMode = .scaleToFill
-                cell.label.text = cleanHTMLTags(searchedPosts[indexPath.row].title?.rendered ?? "")
-                let url = URL(string: searchedImg[indexPath.row])!
-                
-                cell.imageView.kf.setImage(with: url)
-            }
+            
+            navigationItem.title = "Films"
+            cell.imageView.kf.indicatorType = .activity
+            cell.imageView.contentMode = .scaleToFill
+            cell.label.text = cleanHTMLTags(searchedPosts[indexPath.row].title?.rendered ?? "")
+            let url = URL(string: searchedPosts[indexPath.row].yoast_head_json?.og_image?[0].url ?? "")!
+            cell.imageView.kf.setImage(with: url)
+            
         }else{
-            if img.count == posts.count {
-                navigationItem.title = "Films"
-                cell.imageView.kf.indicatorType = .activity
-                cell.imageView.contentMode = .scaleToFill
-                cell.label.text = cleanHTMLTags(posts[indexPath.row].title?.rendered ?? "")
-                let url = URL(string: img[indexPath.row])!
-                cell.imageView.kf.setImage(with: url)
-            }
+            
+            navigationItem.title = "Films"
+            cell.imageView.kf.indicatorType = .activity
+            cell.imageView.contentMode = .scaleToFill
+            cell.label.text = cleanHTMLTags(posts[indexPath.row].title?.rendered ?? "")
+            let url = URL(string: posts[indexPath.row].yoast_head_json?.og_image?[0].url ?? "")!
+            cell.imageView.kf.setImage(with: url)
+            
         }
         
         return cell
@@ -178,14 +132,11 @@ extension MainPageViewController :  UISearchBarDelegate , UISearchResultsUpdatin
             for post in posts{
                 if ((post.title?.rendered?.lowercased().contains(searchText.lowercased())) != nil){
                     searchedPosts.append(post)
-                    imgFetcherforSearched()
                 }
             }
         }else{
             searching = false
             searchedPosts.removeAll(keepingCapacity: false)
-            searchedId.removeAll(keepingCapacity: false)
-            searchedImg.removeAll(keepingCapacity: false)
             searchedPosts = posts
         }
         mainView.postCollectionView.reloadData()
@@ -193,8 +144,6 @@ extension MainPageViewController :  UISearchBarDelegate , UISearchResultsUpdatin
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searching = false
-        searchedId.removeAll(keepingCapacity: false)
-        searchedImg.removeAll(keepingCapacity: false)
         searchedPosts.removeAll(keepingCapacity: false)
     }
 }

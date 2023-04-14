@@ -42,12 +42,10 @@ class NetworkController
     
     func fetchPost(completion: @escaping (Result<[Posts], Error>) -> Void){
         
-        let url = "http://www.hypersuperprojects.com/wp-json/wp/v2/posts?_embed"
+        let url = "http://www.hypersuperprojects.com/wp-json/wp/v2/posts?_embed&per_page=25"
         let headers: HTTPHeaders = [
             "content-type": "application/json",
         ]
-        
-        
         
         
         AF.request(url, method: .get, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
