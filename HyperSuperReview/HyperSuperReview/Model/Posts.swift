@@ -25,8 +25,8 @@ struct Posts: Codable {
     var format: Format?
     var meta: [JSONAny]?
     var categories, tags: [Int]?
-    var yoastHead: String?
-    var yoastHeadJSON: WelcomeYoastHeadJSON?
+    var yoast_head: String?
+    var yoast_head_json: WelcomeYoastHeadJSON?
     var links: WelcomeLinks?
     var embedded: Embedded?
 
@@ -40,8 +40,8 @@ struct Posts: Codable {
         case commentStatus
         case pingStatus
         case sticky, template, format, meta, categories, tags
-        case yoastHead
-        case yoastHeadJSON
+        case yoast_head
+        case yoast_head_json
         case links
         case embedded
     }
@@ -1318,13 +1318,13 @@ struct WelcomeYoastHeadJSON: Codable {
     var title, description: String?
     var robots: Robots?
     var canonical: String?
-    var ogLocale: OgLocale?
-    var ogType: FluffyOgType?
-    var ogTitle, ogDescription: String?
+    var og_locale: OgLocale?
+    var og_type: FluffyOgType?
+    var og_title, og_description: String?
     var ogURL: String?
     var ogSiteName: AuthorEnum?
     var articlePublishedTime, articleModifiedTime: Date?
-    var ogImage: [FluffyOgImage]?
+    var og_image: [FluffyOgImage]?
     var author: AuthorEnum?
     var twitterCard: TwitterCard?
     var twitterMisc: TwitterMisc?
@@ -1332,15 +1332,15 @@ struct WelcomeYoastHeadJSON: Codable {
 
     enum CodingKeys: String, CodingKey {
         case title, description, robots, canonical
-        case ogLocale
-        case ogType
-        case ogTitle
-        case ogDescription
+        case og_locale
+        case og_type
+        case og_title
+        case og_description
         case ogURL
         case ogSiteName
         case articlePublishedTime
         case articleModifiedTime
-        case ogImage
+        case og_image
         case author
         case twitterCard
         case twitterMisc

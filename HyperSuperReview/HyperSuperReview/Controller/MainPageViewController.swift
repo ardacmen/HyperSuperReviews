@@ -99,7 +99,6 @@ class MainPageViewController: UIViewController, UICollectionViewDelegate, UIColl
             case .success(let posts):
                 self.posts = posts
                 self.imgFetcher()
-                print(posts[0])
             case .failure(let error):
                 print("Error fetching posts: \(error)")
             }
