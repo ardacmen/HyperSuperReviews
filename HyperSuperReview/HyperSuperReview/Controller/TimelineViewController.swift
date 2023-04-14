@@ -33,6 +33,7 @@ class TimelineViewController: UIViewController, UICollectionViewDelegate, UIColl
         self.mainView.reviewCollectionView.dataSource = self
         navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         getData()
+      
         
     }
     
@@ -75,8 +76,39 @@ extension TimelineViewController
             if status[indexPath.row] == true{
                 cell.author.text = "Author :\n" + mail[indexPath.row]
                 cell.filmName.text = "Film :\n" + film[indexPath.row]
-                
+                if star[indexPath.row] == 1{
+                    cell.star1.isStarred = true
+                    cell.star2.isStarred = false
+                    cell.star3.isStarred = false
+                    cell.star4.isStarred = false
+                    cell.star5.isStarred = false
+                }else if star[indexPath.row] == 2{
+                    cell.star1.isStarred = true
+                    cell.star2.isStarred = true
+                    cell.star3.isStarred = false
+                    cell.star4.isStarred = false
+                    cell.star5.isStarred = false
+                }else if star[indexPath.row] == 3{
+                    cell.star1.isStarred = true
+                    cell.star2.isStarred = true
+                    cell.star3.isStarred = true
+                    cell.star4.isStarred = false
+                    cell.star5.isStarred = false
+                }else if star[indexPath.row] == 4{
+                    cell.star1.isStarred = true
+                    cell.star2.isStarred = true
+                    cell.star3.isStarred = true
+                    cell.star4.isStarred = true
+                    cell.star5.isStarred = false
+                }else{
+                    cell.star1.isStarred = true
+                    cell.star2.isStarred = true
+                    cell.star3.isStarred = true
+                    cell.star4.isStarred = true
+                    cell.star5.isStarred = true
+                }
                 if review[indexPath.row].count > 70 {
+                    
                     let reviewText = review[indexPath.row]
                     let spaceIndex = reviewText.index(reviewText.startIndex, offsetBy: 70, limitedBy: reviewText.endIndex) ?? reviewText.endIndex
                     let truncatedText = reviewText[..<spaceIndex].trimmingCharacters(in: .whitespacesAndNewlines)

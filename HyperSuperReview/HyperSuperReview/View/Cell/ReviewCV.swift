@@ -51,9 +51,59 @@ class ReviewCV: UICollectionViewCell {
         return stack
     }()
     
+    let star1: StarButton = {
+        let button = StarButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.isUserInteractionEnabled = false
+        return button
+    }()
+    
+    let star2: StarButton = {
+        let button = StarButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.isUserInteractionEnabled = false
+        return button
+    }()
+    
+    let star3: StarButton = {
+        let button = StarButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.isUserInteractionEnabled = false
+        return button
+    }()
+    
+    let star4: StarButton = {
+        let button = StarButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.isUserInteractionEnabled = false
+        return button
+    }()
+    
+    let star5: StarButton = {
+        let button = StarButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.isUserInteractionEnabled = false
+        return button
+    }()
+    lazy var starStackView: UIStackView = {
+        let stack = UIStackView(arrangedSubviews: [
+        star1,
+        star2,
+        star3,
+        star4,
+        star5
+        ])
+        stack.spacing = 10
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        stack.distribution = .fillEqually
+        stack.axis = .horizontal
+        stack.isLayoutMarginsRelativeArrangement = true
+        return stack
+    }()
+    
     lazy var rightside: UIStackView = {
-        let stack = UIStackView(arrangedSubviews: [author,filmName,content])
-        stack.spacing = 15
+        let stack = UIStackView(arrangedSubviews: [author,filmName,content,starStackView])
+        stack.spacing = 10
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.distribution = .fill
         stack.axis = .vertical
@@ -88,7 +138,7 @@ class ReviewCV: UICollectionViewCell {
             mainVStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             mainVStackView.topAnchor.constraint(equalTo: contentView.topAnchor),
             mainVStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
-            image.heightAnchor.constraint(equalToConstant: 200)
+            image.heightAnchor.constraint(equalToConstant: 240)
         ])
     }
     
