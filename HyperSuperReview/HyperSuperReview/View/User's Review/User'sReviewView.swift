@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DetailView: UIView {
+class UsersReviewView: UIView {
     
     
     
@@ -47,15 +47,18 @@ class DetailView: UIView {
         label.font = .systemFont(ofSize: 19)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .white
-
+        
         return label
     }()
+    
+    
     
     let date : UILabel =
     {
         var label = UILabel()
         label.font = .systemFont(ofSize: 12)
         label.textColor = .white
+        label.textAlignment = .left
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -63,12 +66,13 @@ class DetailView: UIView {
     let category : UILabel =
     {
         var label = UILabel()
+        label.textAlignment = .right
         label.font = .systemFont(ofSize: 12)
-        label.textColor = .blue
+        label.textColor = .systemRed
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = ""
         return label
     }()
+    
     
     let imageView : UIImageView =
     {
@@ -93,7 +97,7 @@ class DetailView: UIView {
     lazy var titleStack: UIStackView = {
         let stack = UIStackView(arrangedSubviews:
                                     [
-                                    title
+                                        title
                                     ])
         stack.spacing = 0
         stack.translatesAutoresizingMaskIntoConstraints = false
@@ -106,8 +110,8 @@ class DetailView: UIView {
     lazy var dateAndCategory: UIStackView = {
         let stack = UIStackView(arrangedSubviews:
                                     [
-                                    date,
-                                    category
+                                        date,
+                                        category
                                     ])
         stack.spacing = 0
         stack.translatesAutoresizingMaskIntoConstraints = false
@@ -126,8 +130,20 @@ class DetailView: UIView {
         content.backgroundColor = UIColor.black
         content.textColor = .white
         content.font = .systemFont(ofSize: 15)
+        content.isUserInteractionEnabled     = false
         
         return content
+    }()
+    
+    
+    let userStar : UILabel =
+    {
+        var label = UILabel()
+        label.font = .systemFont(ofSize: 13)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = .white
+        
+        return label
     }()
     
     lazy var contentStack: UIStackView = {
@@ -159,7 +175,7 @@ class DetailView: UIView {
     lazy var mainVStackView: UIStackView = {
         let stack = UIStackView(arrangedSubviews:
                                     [
-                                       title,dateAndCategory,allContent
+                                        title,dateAndCategory,allContent,userStar
                                     ])
         stack.spacing = 16
         stack.translatesAutoresizingMaskIntoConstraints = false
@@ -199,7 +215,7 @@ class DetailView: UIView {
             contentView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: 0),
             contentView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 0),
             contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: 0),
-
+            
             contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor, constant: 0),
             
             mainVStackView.leadingAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.leadingAnchor, constant: padding.left),
@@ -216,5 +232,6 @@ class DetailView: UIView {
         ])
     }
 }
+
 
 

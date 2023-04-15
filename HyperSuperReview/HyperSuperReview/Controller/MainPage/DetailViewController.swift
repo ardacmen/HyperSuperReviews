@@ -9,7 +9,7 @@ import UIKit
 import Alamofire
 
 class DetailViewController: UIViewController {
-
+    
     var post = [Posts]()
     var img = ""
     
@@ -31,8 +31,24 @@ class DetailViewController: UIViewController {
         // Set the navigation bar title color to white
         navigationItem.title = cleanHTMLTags(post[0].title?.rendered ?? "")
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-
-
+        addAction()
+        
+    }
+    
+    func addAction(){
+        mainView.addToWatchLaterButton.addAction(UIAction{ [weak self] _ in
+            self?.addToWatchList()
+        }, for: .touchUpInside)
+    }
+    
+    func addToWatchList(){
+        NetworkController.shared.addToWatchList(name: post[0].title?.rendered ?? ""){ error in
+            if let error = error {
+                self.showAlert(title: "Error", message: error.localizedDescription, style: .alert, actions: [("OK", .default, nil)])
+            } else {
+                self.showAlert(title: "Added", message: "", style: .alert, actions: [("OK", .default, nil)])
+            }
+        }
     }
     
     @objc func addButtonTapped() {
@@ -70,6 +86,6 @@ class DetailViewController: UIViewController {
         dateFormatter.dateFormat = "dd/MM/yyyy"
         return dateFormatter.string(from: date)
     }
-   
-
+    
+    
 }

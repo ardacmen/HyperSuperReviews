@@ -224,6 +224,26 @@ class NetworkController
     }
     
     
+    func addToWatchList(name: String,  completion: @escaping (Error?) -> Void) {
+        
+        db.collection("watchlater").document(Auth.auth().currentUser?.email ?? "No User").updateData([
+            "name" : FieldValue.arrayUnion([name])
+        ]) { err in
+            completion(err)
+        }
+
+        
+    }
     
+    func removeToWatchList(name: String,  completion: @escaping (Error?) -> Void) {
+        
+        db.collection("watchlater").document(Auth.auth().currentUser?.email ?? "No User").updateData([
+            "name" : FieldValue.arrayRemove([name])
+        ]) { err in
+            completion(err)
+        }
+
+        
+    }
     
 }

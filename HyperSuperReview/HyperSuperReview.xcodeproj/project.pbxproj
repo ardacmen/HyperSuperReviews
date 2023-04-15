@@ -30,6 +30,11 @@
 		304642B729DE324F000B14F2 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 304642B629DE324F000B14F2 /* Kingfisher */; };
 		304642BA29DE3299000B14F2 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 304642B929DE3299000B14F2 /* Alamofire */; };
 		304642BC29DE32C1000B14F2 /* Posts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304642BB29DE32C1000B14F2 /* Posts.swift */; };
+		304BC21B29EB0C7200857804 /* User'sReviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304BC21A29EB0C7200857804 /* User'sReviewController.swift */; };
+		304BC21D29EB0C8800857804 /* User'sReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304BC21C29EB0C8800857804 /* User'sReviewView.swift */; };
+		304BC22829EB497800857804 /* WatchLaterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304BC22729EB497800857804 /* WatchLaterView.swift */; };
+		304BC22A29EB498800857804 /* WatchLaterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304BC22929EB498800857804 /* WatchLaterViewController.swift */; };
+		304BC22C29EB4AE700857804 /* UIimage + Resize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304BC22B29EB4AE700857804 /* UIimage + Resize.swift */; };
 		30D4C2C129E1B0F900CAF3AB /* CustomStarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D4C2C029E1B0F900CAF3AB /* CustomStarButton.swift */; };
 		30D4C2C329E1CFF700CAF3AB /* MainPageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D4C2C229E1CFF700CAF3AB /* MainPageModel.swift */; };
 		30D5B99D29DED2AA00CDBF20 /* ForgotPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D5B99C29DED2AA00CDBF20 /* ForgotPassword.swift */; };
@@ -78,6 +83,11 @@
 		304642B029DE29BA000B14F2 /* TabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarController.swift; sourceTree = "<group>"; };
 		304642B329DE2FB7000B14F2 /* MainPageCV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageCV.swift; sourceTree = "<group>"; };
 		304642BB29DE32C1000B14F2 /* Posts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Posts.swift; sourceTree = "<group>"; };
+		304BC21A29EB0C7200857804 /* User'sReviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User'sReviewController.swift"; sourceTree = "<group>"; };
+		304BC21C29EB0C8800857804 /* User'sReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User'sReviewView.swift"; sourceTree = "<group>"; };
+		304BC22729EB497800857804 /* WatchLaterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchLaterView.swift; sourceTree = "<group>"; };
+		304BC22929EB498800857804 /* WatchLaterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchLaterViewController.swift; sourceTree = "<group>"; };
+		304BC22B29EB4AE700857804 /* UIimage + Resize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIimage + Resize.swift"; sourceTree = "<group>"; };
 		30D4C2C029E1B0F900CAF3AB /* CustomStarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomStarButton.swift; sourceTree = "<group>"; };
 		30D4C2C229E1CFF700CAF3AB /* MainPageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageModel.swift; sourceTree = "<group>"; };
 		30D5B99C29DED2AA00CDBF20 /* ForgotPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPassword.swift; sourceTree = "<group>"; };
@@ -158,20 +168,13 @@
 		3046427B29DD6992000B14F2 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				304BC22629EB0D7D00857804 /* Main Page */,
+				304BC22329EB0D3F00857804 /* User's Review */,
+				304BC22129EB0D0700857804 /* Settings */,
+				304BC21E29EB0CD300857804 /* Splash & Login & Register */,
 				30D4C2BF29E1B0DD00CAF3AB /* Custom Element */,
 				304642B229DE2F7F000B14F2 /* Cell */,
-				3046427F29DD69D1000B14F2 /* SplashView.swift */,
-				3046428329DD6CAA000B14F2 /* RegisterView.swift */,
-				3046428D29DD74EE000B14F2 /* LoginView.swift */,
-				304642AE29DE27CC000B14F2 /* MainPageView.swift */,
-				30D5B99C29DED2AA00CDBF20 /* ForgotPassword.swift */,
-				30D5B9A229DEE3FB00CDBF20 /* DetailView.swift */,
-				30D5B9A629DEFDF100CDBF20 /* CommentView.swift */,
-				30D5B9AA29DF160500CDBF20 /* TimelineView.swift */,
-				30D5B9B029DF2DB100CDBF20 /* SettingsView.swift */,
-				30D5B9B229DF33D200CDBF20 /* RequestView.swift */,
-				30D5B9B829DF388B00CDBF20 /* ProfileView.swift */,
-				30FC06C829DF6EB90054B8F9 /* ChangePasswordView.swift */,
+				304BC22729EB497800857804 /* WatchLaterView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -179,19 +182,11 @@
 		3046427C29DD6996000B14F2 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				3046428129DD69DF000B14F2 /* SplashViewController.swift */,
-				3046428529DD6CC0000B14F2 /* RegisterViewController.swift */,
-				3046428F29DD7505000B14F2 /* LoginViewController.swift */,
-				304642AC29DE27BB000B14F2 /* MainPageViewController.swift */,
-				304642B029DE29BA000B14F2 /* TabbarController.swift */,
-				30D5B99E29DED2C300CDBF20 /* ForgotPasswordViewController.swift */,
-				30D5B9A029DEE3EE00CDBF20 /* DetailViewController.swift */,
-				30D5B9A429DEFD2F00CDBF20 /* CommentViewController.swift */,
-				30D5B9A829DF15F600CDBF20 /* TimelineViewController.swift */,
-				30D5B9AE29DF2D9A00CDBF20 /* SettingsViewController.swift */,
-				30D5B9B429DF33EE00CDBF20 /* RequestViewController.swift */,
-				30D5B9B629DF387D00CDBF20 /* ProfileViewController.swift */,
-				30FC06C629DF6E7F0054B8F9 /* ChangePasswordViewController.swift */,
+				304BC22429EB0D6600857804 /* MainPage */,
+				304BC22229EB0D2B00857804 /* User's Review */,
+				304BC22029EB0D0200857804 /* Settings */,
+				304BC21F29EB0CE700857804 /* Splash & Login & Register */,
+				304BC22929EB498800857804 /* WatchLaterViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -215,6 +210,7 @@
 				3046428B29DD6EEB000B14F2 /* UIView + Divider.swift */,
 				304642AA29DE2458000B14F2 /* ViewController + Alert.swift */,
 				30FC06D029DF73D50054B8F9 /* UIViewController + hidekeyboard.swift */,
+				304BC22B29EB4AE700857804 /* UIimage + Resize.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -234,6 +230,89 @@
 				30D5B9AC29DF16B300CDBF20 /* ReviewCV.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		304BC21E29EB0CD300857804 /* Splash & Login & Register */ = {
+			isa = PBXGroup;
+			children = (
+				3046428329DD6CAA000B14F2 /* RegisterView.swift */,
+				3046428D29DD74EE000B14F2 /* LoginView.swift */,
+				30FC06C829DF6EB90054B8F9 /* ChangePasswordView.swift */,
+				30D5B99C29DED2AA00CDBF20 /* ForgotPassword.swift */,
+				3046427F29DD69D1000B14F2 /* SplashView.swift */,
+			);
+			path = "Splash & Login & Register";
+			sourceTree = "<group>";
+		};
+		304BC21F29EB0CE700857804 /* Splash & Login & Register */ = {
+			isa = PBXGroup;
+			children = (
+				30D5B99E29DED2C300CDBF20 /* ForgotPasswordViewController.swift */,
+				3046428529DD6CC0000B14F2 /* RegisterViewController.swift */,
+				304642B029DE29BA000B14F2 /* TabbarController.swift */,
+				30FC06C629DF6E7F0054B8F9 /* ChangePasswordViewController.swift */,
+				3046428F29DD7505000B14F2 /* LoginViewController.swift */,
+				3046428129DD69DF000B14F2 /* SplashViewController.swift */,
+			);
+			path = "Splash & Login & Register";
+			sourceTree = "<group>";
+		};
+		304BC22029EB0D0200857804 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				30D5B9AE29DF2D9A00CDBF20 /* SettingsViewController.swift */,
+				30D5B9B429DF33EE00CDBF20 /* RequestViewController.swift */,
+				30D5B9B629DF387D00CDBF20 /* ProfileViewController.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		304BC22129EB0D0700857804 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				30D5B9B029DF2DB100CDBF20 /* SettingsView.swift */,
+				30D5B9B829DF388B00CDBF20 /* ProfileView.swift */,
+				30D5B9B229DF33D200CDBF20 /* RequestView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		304BC22229EB0D2B00857804 /* User's Review */ = {
+			isa = PBXGroup;
+			children = (
+				30D5B9A829DF15F600CDBF20 /* TimelineViewController.swift */,
+				30D5B9A429DEFD2F00CDBF20 /* CommentViewController.swift */,
+				304BC21A29EB0C7200857804 /* User'sReviewController.swift */,
+			);
+			path = "User's Review";
+			sourceTree = "<group>";
+		};
+		304BC22329EB0D3F00857804 /* User's Review */ = {
+			isa = PBXGroup;
+			children = (
+				304BC21C29EB0C8800857804 /* User'sReviewView.swift */,
+				30D5B9AA29DF160500CDBF20 /* TimelineView.swift */,
+				30D5B9A629DEFDF100CDBF20 /* CommentView.swift */,
+			);
+			path = "User's Review";
+			sourceTree = "<group>";
+		};
+		304BC22429EB0D6600857804 /* MainPage */ = {
+			isa = PBXGroup;
+			children = (
+				304642AC29DE27BB000B14F2 /* MainPageViewController.swift */,
+				30D5B9A029DEE3EE00CDBF20 /* DetailViewController.swift */,
+			);
+			path = MainPage;
+			sourceTree = "<group>";
+		};
+		304BC22629EB0D7D00857804 /* Main Page */ = {
+			isa = PBXGroup;
+			children = (
+				30D5B9A229DEE3FB00CDBF20 /* DetailView.swift */,
+				304642AE29DE27CC000B14F2 /* MainPageView.swift */,
+			);
+			path = "Main Page";
 			sourceTree = "<group>";
 		};
 		30D4C2BF29E1B0DD00CAF3AB /* Custom Element */ = {
@@ -330,12 +409,14 @@
 				304642B129DE29BA000B14F2 /* TabbarController.swift in Sources */,
 				3046426729DD697D000B14F2 /* AppDelegate.swift in Sources */,
 				30D4C2C129E1B0F900CAF3AB /* CustomStarButton.swift in Sources */,
+				304BC22829EB497800857804 /* WatchLaterView.swift in Sources */,
 				304642AF29DE27CC000B14F2 /* MainPageView.swift in Sources */,
 				3046428429DD6CAA000B14F2 /* RegisterView.swift in Sources */,
 				30D5B9B529DF33EE00CDBF20 /* RequestViewController.swift in Sources */,
 				30D5B9B729DF387D00CDBF20 /* ProfileViewController.swift in Sources */,
 				30D5B9A329DEE3FB00CDBF20 /* DetailView.swift in Sources */,
 				3046428C29DD6EEB000B14F2 /* UIView + Divider.swift in Sources */,
+				304BC22A29EB498800857804 /* WatchLaterViewController.swift in Sources */,
 				30D5B9A129DEE3EE00CDBF20 /* DetailViewController.swift in Sources */,
 				304642B429DE2FB7000B14F2 /* MainPageCV.swift in Sources */,
 				30D5B9A929DF15F600CDBF20 /* TimelineViewController.swift in Sources */,
@@ -346,6 +427,7 @@
 				30D4C2C329E1CFF700CAF3AB /* MainPageModel.swift in Sources */,
 				3046428229DD69DF000B14F2 /* SplashViewController.swift in Sources */,
 				30D5B9AD29DF16B300CDBF20 /* ReviewCV.swift in Sources */,
+				304BC21B29EB0C7200857804 /* User'sReviewController.swift in Sources */,
 				304642AD29DE27BB000B14F2 /* MainPageViewController.swift in Sources */,
 				3046428829DD6EBC000B14F2 /* UIColor + Convert.swift in Sources */,
 				30D5B9B129DF2DB100CDBF20 /* SettingsView.swift in Sources */,
@@ -361,9 +443,11 @@
 				30FC06C729DF6E7F0054B8F9 /* ChangePasswordViewController.swift in Sources */,
 				30FC06D129DF73D50054B8F9 /* UIViewController + hidekeyboard.swift in Sources */,
 				3046429029DD7505000B14F2 /* LoginViewController.swift in Sources */,
+				304BC22C29EB4AE700857804 /* UIimage + Resize.swift in Sources */,
 				30D5B9A529DEFD2F00CDBF20 /* CommentViewController.swift in Sources */,
 				30D5B9B929DF388B00CDBF20 /* ProfileView.swift in Sources */,
 				30D5B9AB29DF160500CDBF20 /* TimelineView.swift in Sources */,
+				304BC21D29EB0C8800857804 /* User'sReviewView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

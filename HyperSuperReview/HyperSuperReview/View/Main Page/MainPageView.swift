@@ -37,6 +37,7 @@ class MainPageView: UIView {
     
     
     
+    
     let postCollectionView : UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
@@ -53,14 +54,9 @@ class MainPageView: UIView {
         return collectionView
     }()
     
-    let loaderImageView : UIImageView  = {
-        let imageView = UIImageView()
-        imageView.image = UIImage(named: "loading")
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        return imageView
-    }()
     
-   
+    
+    
     
     lazy var mainVStackView: UIStackView = {
         let stack = UIStackView(arrangedSubviews:
@@ -78,7 +74,6 @@ class MainPageView: UIView {
     private func setupSubviews()
     {
         addSubview(contentView)
-        
         contentView.addSubview(mainVStackView)
     }
     
@@ -115,7 +110,8 @@ class MainPageView: UIView {
             postCollectionView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             postCollectionView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             
-           
+          
+            
             
         ])
     }

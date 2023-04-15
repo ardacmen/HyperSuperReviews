@@ -149,6 +149,96 @@ class SettingsView: UIView {
     // LİNE TWO
     
    
+    lazy var  commentsStack : UIStackView = {
+        let stack = UIStackView(arrangedSubviews:
+                                    [
+                                        commentsImageView,
+                                        commentsLabel
+                                    ])
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        stack.axis = .vertical
+        stack.distribution = .fillEqually
+        stack.backgroundColor = .black
+        stack.isLayoutMarginsRelativeArrangement = true
+        stack.clipsToBounds = true
+        stack.layer.cornerRadius = 15
+        stack.layer.borderWidth = 0.5
+        stack.layer.borderColor = UIColor.white.cgColor
+        return stack
+    }()
+    
+    let commentsImageView : UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(systemName: "message")?.withTintColor(.white, renderingMode: .alwaysOriginal).withAlignmentRectInsets(UIEdgeInsets(top: -15, left: -25, bottom: -0,
+                                                                                               right: -25))
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+        
+    }()
+    
+    
+    let commentsLabel : UILabel = {
+        let label = UILabel()
+        label.text = "Comments"
+        label.numberOfLines = 0
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = .white
+        label.textAlignment = .center
+        return label
+    }()
+ 
+    
+    let MyFriendsImageView : UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(systemName: "person.3")?.withTintColor(.white, renderingMode: .alwaysOriginal).withAlignmentRectInsets(UIEdgeInsets(top: -15, left: -25, bottom: -0,
+                                                                                               right: -25))
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+        
+    }()
+    
+    
+    let MyFriendsLabel : UILabel = {
+        let label = UILabel()
+        label.text = "Friends"
+        label.numberOfLines = 0
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = .white
+        label.textAlignment = .center
+        return label
+    }()
+    
+    lazy var  MyFriendsStackView : UIStackView = {
+        let stack = UIStackView(arrangedSubviews:
+                                    [
+                                    MyFriendsImageView,
+                                     MyFriendsLabel
+                                    ])
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        stack.axis = .vertical
+        stack.distribution = .fillEqually
+        stack.backgroundColor = .black
+        stack.isLayoutMarginsRelativeArrangement = true
+        stack.clipsToBounds = true
+        stack.layer.cornerRadius = 15
+        stack.layer.borderWidth = 0.5
+        stack.layer.borderColor = UIColor.white.cgColor
+        return stack
+    }()
+    
+    lazy var lineTwo: UIStackView = {
+        let stack = UIStackView(arrangedSubviews:
+                                    [
+                                        commentsStack,
+                                        MyFriendsStackView
+                                    ])
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        stack.axis = .horizontal
+        stack.spacing = 25
+        stack.distribution = .fillEqually
+        stack.isLayoutMarginsRelativeArrangement = true
+        return stack
+    }()
     
    
     // LİNE THREE
@@ -199,10 +289,31 @@ class SettingsView: UIView {
     }()
  
     
-    lazy var  emptyStack : UIStackView = {
+    let myReviewsImageView : UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(systemName: "book")?.withTintColor(.white, renderingMode: .alwaysOriginal).withAlignmentRectInsets(UIEdgeInsets(top: -15, left: -25, bottom: -0,
+                                                                                               right: -25))
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+        
+    }()
+    
+    
+    let myReviewsLabel : UILabel = {
+        let label = UILabel()
+        label.text = "My Reviews"
+        label.numberOfLines = 0
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = .white
+        label.textAlignment = .center
+        return label
+    }()
+    
+    lazy var  myReviewsStack : UIStackView = {
         let stack = UIStackView(arrangedSubviews:
                                     [
-                                       
+                                    myReviewsImageView,
+                                     myReviewsLabel
                                     ])
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.axis = .vertical
@@ -212,7 +323,7 @@ class SettingsView: UIView {
         stack.clipsToBounds = true
         stack.layer.cornerRadius = 15
         stack.layer.borderWidth = 0.5
-        stack.layer.borderColor = UIColor.black.cgColor
+        stack.layer.borderColor = UIColor.white.cgColor
         return stack
     }()
     
@@ -220,7 +331,7 @@ class SettingsView: UIView {
         let stack = UIStackView(arrangedSubviews:
                                     [
                                         logoutStack,
-                                        emptyStack
+                                        myReviewsStack
                                     ])
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.axis = .horizontal
@@ -236,6 +347,7 @@ class SettingsView: UIView {
         let stack = UIStackView(arrangedSubviews:
                                     [
                                         lineOne,
+                                        lineTwo,
                                         lineThree
                                     ])
         stack.spacing = 25
@@ -287,8 +399,10 @@ class SettingsView: UIView {
            
             profileStack.heightAnchor.constraint(equalToConstant: widthSize + 30),
             requestStack.heightAnchor.constraint(equalToConstant: widthSize + 30),
-            logoutStack.heightAnchor.constraint(equalToConstant: widthSize + 30)
-            
+            logoutStack.heightAnchor.constraint(equalToConstant: widthSize + 30),
+            MyFriendsStackView.heightAnchor.constraint(equalToConstant: widthSize + 30),
+            commentsStack.heightAnchor.constraint(equalToConstant: widthSize + 30),
+            myReviewsStack.heightAnchor.constraint(equalToConstant: widthSize + 30)
             
             
         ])
