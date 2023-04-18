@@ -231,19 +231,40 @@ class NetworkController
         ]) { err in
             completion(err)
         }
-
+        
         
     }
     
-    func removeToWatchList(name: String,  completion: @escaping (Error?) -> Void) {
-        
-        db.collection("watchlater").document(Auth.auth().currentUser?.email ?? "No User").updateData([
-            "name" : FieldValue.arrayRemove([name])
-        ]) { err in
-            completion(err)
+    func removeFromWatchLater(name: String, completion: @escaping (Result<Void, Error>) -> Void) {
+        let watchLaterRef = db.collection("watchlater").document(Auth.auth().currentUser?.email ?? "No User")
+        watchLaterRef.updateData([
+            "name": FieldValue.arrayRemove([name])
+        ]) { error in
+            if let error = error {
+                completion(.failure(error))
+            } else {
+                completion(.success(()))
+            }
         }
-
-        
     }
-    
+
+
+
+
+
+func fetchWatchLaterData(completion: @escaping (Result<[String], Error>) -> Void) {
+    db.collection("watchlater").document(Auth.auth().currentUser?.email ?? "No User").getDocument { (document, error) in
+        if let error = error {
+            completion(.failure(error))
+        } else {
+            let watchLaterData = document?.data()?["name"] as? [String] ?? []
+            completion(.success(watchLaterData))
+        }
+    }
+}
+
+
+
+
+
 }

@@ -29,7 +29,8 @@ class SettingsViewController:   UIViewController   {
         setupImageViews(imageViews: imageViewList)
         hideKeyboardWhenTappedAround()
         addAction()
-        
+        navigationItem.title = "Settings"
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         
     }
     

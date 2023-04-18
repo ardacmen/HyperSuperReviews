@@ -85,9 +85,9 @@ class MainPageView: UIView {
         
         
         padding.top =  0
-        padding.left = 0
+        padding.left = 16
         padding.bottom = 0
-        padding.right = 0
+        padding.right = 16
         
         
         NSLayoutConstraint.activate([

@@ -70,8 +70,9 @@ class TabbarViewController : UITabBarController
         viewControllers = [
             createTabbarFirstElement(),
             createSecondElement(),
-            createTabbarThirdelement(),
-            createFourthElement()
+            createFourthElement(),
+            createTabbarThirdelement()
+           
         ]
         
     }
