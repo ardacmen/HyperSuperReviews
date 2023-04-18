@@ -26,6 +26,12 @@ class WatchLaterViewController: UIViewController, UITableViewDataSource, UITable
         mainView.tableView.dataSource = self
         navigationItem.title = "Watch Later"
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        // Create a right bar button item for sharing
+        let shareButton = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareList))
+
+        // Add the button to the navigation bar
+        navigationItem.rightBarButtonItem = shareButton
+
         getWatchLater()
     }
     
@@ -34,6 +40,18 @@ class WatchLaterViewController: UIViewController, UITableViewDataSource, UITable
         getWatchLater()
     }
     
+    @objc func shareList() {
+   
+        // Create an activity view controller
+        let activityVC = UIActivityViewController(activityItems: list, applicationActivities: nil)
+
+        // Exclude sharing options that don't make sense for this content
+        activityVC.excludedActivityTypes = [.addToReadingList, .airDrop, .copyToPasteboard, .openInIBooks, .print]
+
+        // Present the activity view controller
+        present(activityVC, animated: true, completion: nil)
+    }
+
     
     
     

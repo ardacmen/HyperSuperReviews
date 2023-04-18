@@ -42,7 +42,8 @@ class DetailViewController: UIViewController {
     }
     
     func addToWatchList(){
-        NetworkController.shared.addToWatchList(name: post[0].title?.rendered ?? ""){ error in
+
+        NetworkController.shared.addToWatchList(name: cleanHTMLTags(post[0].title?.rendered ?? "") ){ error in
             if let error = error {
                 self.showAlert(title: "Error", message: error.localizedDescription, style: .alert, actions: [("OK", .default, nil)])
             } else {
