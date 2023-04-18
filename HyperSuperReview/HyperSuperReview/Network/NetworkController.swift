@@ -247,24 +247,38 @@ class NetworkController
             }
         }
     }
-
-
-
-
-
-func fetchWatchLaterData(completion: @escaping (Result<[String], Error>) -> Void) {
-    db.collection("watchlater").document(Auth.auth().currentUser?.email ?? "No User").getDocument { (document, error) in
-        if let error = error {
-            completion(.failure(error))
-        } else {
-            let watchLaterData = document?.data()?["name"] as? [String] ?? []
-            completion(.success(watchLaterData))
+    
+    
+    
+    
+    
+    func fetchWatchLaterData(completion: @escaping (Result<[String], Error>) -> Void) {
+        db.collection("watchlater").document(Auth.auth().currentUser?.email ?? "No User").getDocument { (document, error) in
+            if let error = error {
+                completion(.failure(error))
+            } else {
+                let watchLaterData = document?.data()?["name"] as? [String] ?? []
+                completion(.success(watchLaterData))
+            }
         }
     }
-}
+    
+    
+    
+    
+    func fetchAllDocumentsInCollection(collectionName: String, completion: @escaping (Result<[QueryDocumentSnapshot], Error>) -> Void) {
+        let collectionRef = db.collection(collectionName)
+        collectionRef.getDocuments { (querySnapshot, error) in
+            if let error = error {
+                completion(.failure(error))
+            } else if let documents = querySnapshot?.documents {
+                completion(.success(documents))
+            } else {
+               
+            }
+        }
+    }
 
 
-
-
-
+    
 }

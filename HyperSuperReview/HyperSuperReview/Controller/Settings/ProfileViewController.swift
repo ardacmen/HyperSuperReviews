@@ -20,6 +20,7 @@ class ProfileViewController:  UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         addActionToElement()
         getData()
         hideKeyboardWhenTappedAround()

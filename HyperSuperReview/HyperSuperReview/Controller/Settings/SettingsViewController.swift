@@ -24,7 +24,8 @@ class SettingsViewController:   UIViewController   {
         let imageViewList = [
             mainView.profileImageView,
             mainView.requestImageView,
-            mainView.logoutImageView
+            mainView.logoutImageView,
+            mainView.myReviewsImageView
         ]
         setupImageViews(imageViews: imageViewList)
         hideKeyboardWhenTappedAround()
@@ -66,8 +67,13 @@ class SettingsViewController:   UIViewController   {
             let navigationController = UINavigationController(rootViewController: controller)
             navigationController.modalPresentationStyle = .overCurrentContext
             self.navigationController?.present(navigationController, animated: true, completion: nil)
-        }else{
+        }else if data == UIImage(systemName:
+                                    "square.and.pencil")?.withTintColor(.white, renderingMode: .alwaysOriginal).pngData(){
             let controller = RequestViewController()
+            self.navigationController?.pushViewController(controller, animated: true)
+        }else{
+            print("asdasdasd")
+            let controller = MyReviewsViewController()
             self.navigationController?.pushViewController(controller, animated: true)
         }
     }
