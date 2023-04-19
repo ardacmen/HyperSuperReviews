@@ -76,17 +76,27 @@ extension MyReviewsViewController : UITableViewDataSource, UITableViewDelegate
 {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("girdi")
         return reviews.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: MyReviewTableViewCell.identifier, for: indexPath) as! MyReviewTableViewCell
-        print("girdi2")
         cell.titleLabel.text = reviews[indexPath.row].film
-        
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedData = reviews[indexPath.row]
+        let detailViewController = MyReviewDetailViewController()
+        detailViewController.email   = selectedData.email
+        detailViewController.film    = selectedData.film
+        detailViewController.rating  = selectedData.rating
+        detailViewController.status  = selectedData.status
+        detailViewController.text    = selectedData.text
+        detailViewController.url     = selectedData.url
+        navigationController?.pushViewController(detailViewController, animated: true)
+    }
+
     
     
 }

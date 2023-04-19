@@ -56,6 +56,8 @@
 		30D5B9B529DF33EE00CDBF20 /* RequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D5B9B429DF33EE00CDBF20 /* RequestViewController.swift */; };
 		30D5B9B729DF387D00CDBF20 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D5B9B629DF387D00CDBF20 /* ProfileViewController.swift */; };
 		30D5B9B929DF388B00CDBF20 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D5B9B829DF388B00CDBF20 /* ProfileView.swift */; };
+		30F6E60029F008760028CE2B /* MyReviewDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F6E5FF29F008760028CE2B /* MyReviewDetailViewController.swift */; };
+		30F6E60229F0088E0028CE2B /* MyReviewDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F6E60129F0088E0028CE2B /* MyReviewDetailView.swift */; };
 		30FC06C729DF6E7F0054B8F9 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FC06C629DF6E7F0054B8F9 /* ChangePasswordViewController.swift */; };
 		30FC06C929DF6EB90054B8F9 /* ChangePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FC06C829DF6EB90054B8F9 /* ChangePasswordView.swift */; };
 		30FC06CD29DF72DA0054B8F9 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 30FC06CC29DF72DA0054B8F9 /* FirebaseAuth */; };
@@ -113,6 +115,8 @@
 		30D5B9B429DF33EE00CDBF20 /* RequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestViewController.swift; sourceTree = "<group>"; };
 		30D5B9B629DF387D00CDBF20 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		30D5B9B829DF388B00CDBF20 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		30F6E5FF29F008760028CE2B /* MyReviewDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReviewDetailViewController.swift; sourceTree = "<group>"; };
+		30F6E60129F0088E0028CE2B /* MyReviewDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReviewDetailView.swift; sourceTree = "<group>"; };
 		30FC06C629DF6E7F0054B8F9 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		30FC06C829DF6EB90054B8F9 /* ChangePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordView.swift; sourceTree = "<group>"; };
 		30FC06D029DF73D50054B8F9 /* UIViewController + hidekeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + hidekeyboard.swift"; sourceTree = "<group>"; };
@@ -274,6 +278,7 @@
 				30D5B9B429DF33EE00CDBF20 /* RequestViewController.swift */,
 				30D5B9B629DF387D00CDBF20 /* ProfileViewController.swift */,
 				30A5AEEE29EF1377005964AC /* MyReviewsViewController.swift */,
+				30F6E5FF29F008760028CE2B /* MyReviewDetailViewController.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -285,6 +290,7 @@
 				30D5B9B829DF388B00CDBF20 /* ProfileView.swift */,
 				30D5B9B229DF33D200CDBF20 /* RequestView.swift */,
 				30A5AEF029EF13CF005964AC /* MyReviewsView.swift */,
+				30F6E60129F0088E0028CE2B /* MyReviewDetailView.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -436,6 +442,7 @@
 				30D5B9A929DF15F600CDBF20 /* TimelineViewController.swift in Sources */,
 				304642BC29DE32C1000B14F2 /* Posts.swift in Sources */,
 				3046426929DD697D000B14F2 /* SceneDelegate.swift in Sources */,
+				30F6E60029F008760028CE2B /* MyReviewDetailViewController.swift in Sources */,
 				3046428629DD6CC0000B14F2 /* RegisterViewController.swift in Sources */,
 				3046428029DD69D1000B14F2 /* SplashView.swift in Sources */,
 				30D4C2C329E1CFF700CAF3AB /* MainPageModel.swift in Sources */,
@@ -463,6 +470,7 @@
 				30D5B9A529DEFD2F00CDBF20 /* CommentViewController.swift in Sources */,
 				30D5B9B929DF388B00CDBF20 /* ProfileView.swift in Sources */,
 				30D5B9AB29DF160500CDBF20 /* TimelineView.swift in Sources */,
+				30F6E60229F0088E0028CE2B /* MyReviewDetailView.swift in Sources */,
 				304BC21D29EB0C8800857804 /* User'sReviewView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
