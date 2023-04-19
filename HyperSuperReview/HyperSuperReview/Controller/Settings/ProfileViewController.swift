@@ -7,12 +7,11 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseStorage
 
-
-class ProfileViewController:  UIViewController {
+class ProfileViewController:  UIViewController ,  UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     
     let mainView = ProfileView()
-    
     override func loadView() {
         self.view = mainView
     }
@@ -21,12 +20,37 @@ class ProfileViewController:  UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        navigationItem.title = "Profil Settings"
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        mainView.imageView.isUserInteractionEnabled = true
+        let imageTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(selectImage))
+        mainView.imageView.addGestureRecognizer(imageTapRecognizer)
+        
         addActionToElement()
-        getData()
         hideKeyboardWhenTappedAround()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        getData()
+        getImage()
+    }
     
+    func getImage()
+    {
+        let storageRef = Storage.storage().reference().child("profilePhotos/\(String(describing: Auth.auth().currentUser!.email!)).jpg")
+        
+        
+        storageRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
+            guard let imageData = data, error == nil else {
+                print("Error downloading image: \(error!)")
+                return
+            }
+            
+            
+            let image = UIImage(data: imageData)
+            self.mainView.imageView.image = image
+        }
+    }
     
     func addActionToElement(){
         
@@ -89,6 +113,49 @@ class ProfileViewController:  UIViewController {
             }
         }
     }
+    
+    @objc func selectImage() {
+        
+        let picker = UIImagePickerController()
+        picker.delegate = self
+        picker.sourceType = .photoLibrary
+        picker.allowsEditing = true
+        present(picker, animated: true, completion: nil)
+        
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        guard let image = info[.originalImage] as? UIImage else {
+            return
+        }
+        
+        self.mainView.imageView.image = image
+        self.dismiss(animated: true, completion: nil)
+        
+        let storageRef = Storage.storage().reference().child("profilePhotos/\(String(describing: Auth.auth().currentUser!.email!)).jpg")
+        
+        guard let imageData = image.jpegData(compressionQuality: 0.5) else {
+            return
+        }
+        
+        let uploadTask = storageRef.putData(imageData, metadata: nil) { metadata, error in
+            guard error == nil else {
+                print("Error uploading image: \(error!)")
+                return
+            }
+            
+            // Image uploaded successfully
+            print("Image uploaded successfully!")
+        }
+        
+        uploadTask.observe(.progress) { snapshot in
+            let percentComplete = 100.0 * Double(snapshot.progress!.completedUnitCount) / Double(snapshot.progress!.totalUnitCount)
+            print("Upload progress: \(percentComplete)%")
+        }
+    }
+    
+    
+    
     
     func getData(){
         

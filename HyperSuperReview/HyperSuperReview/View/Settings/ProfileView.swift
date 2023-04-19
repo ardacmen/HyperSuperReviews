@@ -45,7 +45,10 @@ class ProfileView : UIView {
     let imageView: UIImageView = {
         let view = UIImageView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.image = UIImage(systemName: "person")
+        view.image = UIImage(systemName:
+        "person.circle")
+        view.clipsToBounds = true
+        view.layer.cornerRadius = 75
         return view
     }()
     
@@ -163,6 +166,7 @@ class ProfileView : UIView {
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.axis = .vertical
         stack.spacing = 8
+        
         stack.isLayoutMarginsRelativeArrangement = true
         return stack
     }()
@@ -175,7 +179,8 @@ class ProfileView : UIView {
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.axis = .vertical
         stack.spacing = 16
-        stack.isLayoutMarginsRelativeArrangement = true
+        stack.clipsToBounds = true
+        
         return stack
     }()
     
@@ -189,7 +194,7 @@ class ProfileView : UIView {
                                     ])
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.axis = .vertical
-        stack.spacing = 16
+        stack.spacing = 32
         stack.isLayoutMarginsRelativeArrangement = true
         return stack
     }()
@@ -243,8 +248,8 @@ class ProfileView : UIView {
             saveButton.heightAnchor.constraint(equalToConstant: 50.0),
             nameStack.heightAnchor.constraint(equalToConstant: 50.0),
             imageView.heightAnchor.constraint(equalToConstant: 150),
-            imageView.leadingAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.leadingAnchor, constant: 60),
-            imageView.trailingAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.trailingAnchor, constant: -60),
+            imageView.leadingAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.leadingAnchor, constant: (  UIScreen.main.bounds.width - 150) / 2),
+            imageView.trailingAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.trailingAnchor, constant: -(  UIScreen.main.bounds.width - 150) / 2)
             
         ])
     }
