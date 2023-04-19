@@ -65,6 +65,9 @@
 		30F6E60D29F060370028CE2B /* FirebaseMLModelDownloader in Frameworks */ = {isa = PBXBuildFile; productRef = 30F6E60C29F060370028CE2B /* FirebaseMLModelDownloader */; };
 		30F6E60F29F060370028CE2B /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = 30F6E60E29F060370028CE2B /* FirebaseRemoteConfig */; };
 		30F6E61129F060370028CE2B /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 30F6E61029F060370028CE2B /* FirebaseStorage */; };
+		30F6E61329F08B1D0028CE2B /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F6E61229F08B1D0028CE2B /* SearchView.swift */; };
+		30F6E61529F08B2A0028CE2B /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F6E61429F08B2A0028CE2B /* SearchViewController.swift */; };
+		30F6E61729F08FC00028CE2B /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F6E61629F08FC00028CE2B /* PostTableViewCell.swift */; };
 		30FC06C729DF6E7F0054B8F9 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FC06C629DF6E7F0054B8F9 /* ChangePasswordViewController.swift */; };
 		30FC06C929DF6EB90054B8F9 /* ChangePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FC06C829DF6EB90054B8F9 /* ChangePasswordView.swift */; };
 		30FC06D129DF73D50054B8F9 /* UIViewController + hidekeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FC06D029DF73D50054B8F9 /* UIViewController + hidekeyboard.swift */; };
@@ -122,6 +125,9 @@
 		30D5B9B829DF388B00CDBF20 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		30F6E5FF29F008760028CE2B /* MyReviewDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReviewDetailViewController.swift; sourceTree = "<group>"; };
 		30F6E60129F0088E0028CE2B /* MyReviewDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReviewDetailView.swift; sourceTree = "<group>"; };
+		30F6E61229F08B1D0028CE2B /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		30F6E61429F08B2A0028CE2B /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		30F6E61629F08FC00028CE2B /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		30FC06C629DF6E7F0054B8F9 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		30FC06C829DF6EB90054B8F9 /* ChangePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordView.swift; sourceTree = "<group>"; };
 		30FC06D029DF73D50054B8F9 /* UIViewController + hidekeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + hidekeyboard.swift"; sourceTree = "<group>"; };
@@ -197,6 +203,7 @@
 				30D4C2BF29E1B0DD00CAF3AB /* Custom Element */,
 				304642B229DE2F7F000B14F2 /* Cell */,
 				304BC22729EB497800857804 /* WatchLaterView.swift */,
+				30F6E61229F08B1D0028CE2B /* SearchView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -209,6 +216,7 @@
 				304BC22029EB0D0200857804 /* Settings */,
 				304BC21F29EB0CE700857804 /* Splash & Login & Register */,
 				304BC22929EB498800857804 /* WatchLaterViewController.swift */,
+				30F6E61429F08B2A0028CE2B /* SearchViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -252,6 +260,7 @@
 				30D5B9AC29DF16B300CDBF20 /* ReviewCV.swift */,
 				304BC22D29EB506700857804 /* WatchLaterCell.swift */,
 				30A5AEF229EF168E005964AC /* MyReviewTableViewCell.swift */,
+				30F6E61629F08FC00028CE2B /* PostTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -441,6 +450,7 @@
 				304642AB29DE2458000B14F2 /* ViewController + Alert.swift in Sources */,
 				304642B129DE29BA000B14F2 /* TabbarController.swift in Sources */,
 				30A5AEF129EF13CF005964AC /* MyReviewsView.swift in Sources */,
+				30F6E61529F08B2A0028CE2B /* SearchViewController.swift in Sources */,
 				3046426729DD697D000B14F2 /* AppDelegate.swift in Sources */,
 				30D4C2C129E1B0F900CAF3AB /* CustomStarButton.swift in Sources */,
 				304BC22829EB497800857804 /* WatchLaterView.swift in Sources */,
@@ -452,6 +462,7 @@
 				3046428C29DD6EEB000B14F2 /* UIView + Divider.swift in Sources */,
 				304BC22A29EB498800857804 /* WatchLaterViewController.swift in Sources */,
 				30D5B9A129DEE3EE00CDBF20 /* DetailViewController.swift in Sources */,
+				30F6E61729F08FC00028CE2B /* PostTableViewCell.swift in Sources */,
 				304642B429DE2FB7000B14F2 /* MainPageCV.swift in Sources */,
 				30A5AEEF29EF1377005964AC /* MyReviewsViewController.swift in Sources */,
 				30D5B9A929DF15F600CDBF20 /* TimelineViewController.swift in Sources */,
@@ -478,6 +489,7 @@
 				30D5B9AF29DF2D9A00CDBF20 /* SettingsViewController.swift in Sources */,
 				3046428A29DD6ED7000B14F2 /* UITextField + Padding.swift in Sources */,
 				30A5AEF329EF168E005964AC /* MyReviewTableViewCell.swift in Sources */,
+				30F6E61329F08B1D0028CE2B /* SearchView.swift in Sources */,
 				30FC06C729DF6E7F0054B8F9 /* ChangePasswordViewController.swift in Sources */,
 				30FC06D129DF73D50054B8F9 /* UIViewController + hidekeyboard.swift in Sources */,
 				3046429029DD7505000B14F2 /* LoginViewController.swift in Sources */,

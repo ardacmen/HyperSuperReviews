@@ -64,12 +64,23 @@ class TabbarViewController : UITabBarController
         
     }
     
+    func createFifthElement() -> UIViewController{
+        
+        let rootViewController =  SearchViewController()
+        let navController = UINavigationController(rootViewController: rootViewController)
+        rootViewController.navigationItem.title = "Search"
+        navController.tabBarItem.image = UIImage(systemName: "magnifyingglass")?.withTintColor(.white, renderingMode: .alwaysOriginal).resize(targetSize: CGSize(width: 32, height: 32))
+        return navController
+        
+    }
+    
     
     func setupVCs(){
         
         viewControllers = [
             createTabbarFirstElement(),
             createSecondElement(),
+            createFifthElement(),
             createFourthElement(),
             createTabbarThirdelement()
            

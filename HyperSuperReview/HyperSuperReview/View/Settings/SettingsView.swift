@@ -229,8 +229,8 @@ class SettingsView: UIView {
     lazy var lineTwo: UIStackView = {
         let stack = UIStackView(arrangedSubviews:
                                     [
-                                        commentsStack,
-                                        MyFriendsStackView
+                                     //   commentsStack,
+                                    //    MyFriendsStackView
                                     ])
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.axis = .horizontal
@@ -347,7 +347,7 @@ class SettingsView: UIView {
         let stack = UIStackView(arrangedSubviews:
                                     [
                                         lineOne,
-                                        lineTwo,
+                                //        lineTwo,
                                         lineThree
                                     ])
         stack.spacing = 25

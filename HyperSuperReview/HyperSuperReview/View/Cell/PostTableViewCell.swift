@@ -1,13 +1,14 @@
 import UIKit
 
-class WatchLaterCell: UITableViewCell {
+class PostTableViewCell: UITableViewCell {
     
     
-    static let identifier = "WatchLaterCell"
+    static let identifier = "PostTableViewCell"
     
     let titleLabel: UILabel = {
         let label = UILabel()
         label.textColor = .white
+        label.backgroundColor = .black
         return label
     }()
     
