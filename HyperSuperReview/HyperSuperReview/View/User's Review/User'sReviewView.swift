@@ -130,7 +130,6 @@ class UsersReviewView: UIView {
         content.backgroundColor = UIColor.black
         content.textColor = .white
         content.font = .systemFont(ofSize: 15)
-        content.isUserInteractionEnabled     = false
         
         return content
     }()

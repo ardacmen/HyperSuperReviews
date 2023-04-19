@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseStorage
 
 class ProfileView : UIView {
     
@@ -41,6 +42,12 @@ class ProfileView : UIView {
     }()
     
     
+    let imageView: UIImageView = {
+        let view = UIImageView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.image = UIImage(systemName: "person")
+        return view
+    }()
     
     
     let emailLabel: UILabel = {
@@ -66,8 +73,8 @@ class ProfileView : UIView {
     lazy var emailStack: UIStackView = {
         let stack = UIStackView(arrangedSubviews:
                                     [
-                                      emailLabel,
-                                      emailTextField
+                                        emailLabel,
+                                        emailTextField
                                     ])
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.axis = .horizontal
@@ -101,8 +108,8 @@ class ProfileView : UIView {
     lazy var nameStack: UIStackView = {
         let stack = UIStackView(arrangedSubviews:
                                     [
-                                      nameLabel,
-                                      nameTextField
+                                        nameLabel,
+                                        nameTextField
                                     ])
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.axis = .horizontal
@@ -112,10 +119,10 @@ class ProfileView : UIView {
         return stack
     }()
     
-   
+    
     
     let deleteButton : UIButton = {
-       let button = UIButton()
+        let button = UIButton()
         button.backgroundColor = .systemBlue
         button.setTitleColor(.white, for: .normal)
         button.setTitle("Delete Account", for: .normal)
@@ -124,7 +131,7 @@ class ProfileView : UIView {
     }()
     
     let changePassword : UIButton = {
-       let button = UIButton()
+        let button = UIButton()
         button.backgroundColor = .systemBlue
         button.setTitleColor(.white, for: .normal)
         button.setTitle("Change Password", for: .normal)
@@ -133,7 +140,7 @@ class ProfileView : UIView {
     }()
     
     let saveButton : UIButton = {
-       let button = UIButton()
+        let button = UIButton()
         button.backgroundColor = .systemBlue
         button.setTitleColor(.white, for: .normal)
         button.setTitle("Save", for: .normal)
@@ -141,9 +148,9 @@ class ProfileView : UIView {
         return button
     }()
     
-  
     
-   
+    
+    
     
     
     lazy var buttonsStack: UIStackView = {
@@ -159,14 +166,26 @@ class ProfileView : UIView {
         stack.isLayoutMarginsRelativeArrangement = true
         return stack
     }()
-   
+    
+    lazy var imageViewStack: UIStackView = {
+        let stack = UIStackView(arrangedSubviews:
+                                    [
+                                        imageView,
+                                    ])
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        stack.axis = .vertical
+        stack.spacing = 16
+        stack.isLayoutMarginsRelativeArrangement = true
+        return stack
+    }()
+    
     lazy var mainVStackView: UIStackView = {
         let stack = UIStackView(arrangedSubviews:
                                     [
-                                        
-                                       emailStack,
-                                       nameStack,
-                                       buttonsStack,
+                                        imageViewStack,
+                                        emailStack,
+                                        nameStack,
+                                        buttonsStack,
                                     ])
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.axis = .vertical
@@ -182,7 +201,7 @@ class ProfileView : UIView {
         contentView.addSubview(mainVStackView)
     }
     
-   
+    
     
     private  func  layoutConstraint() {
         
@@ -222,9 +241,10 @@ class ProfileView : UIView {
             deleteButton.heightAnchor.constraint(equalToConstant: 50.0),
             changePassword.heightAnchor.constraint(equalToConstant: 50.0),
             saveButton.heightAnchor.constraint(equalToConstant: 50.0),
-            nameStack.heightAnchor.constraint(equalToConstant: 50.0)
-           
-           
+            nameStack.heightAnchor.constraint(equalToConstant: 50.0),
+            imageView.heightAnchor.constraint(equalToConstant: 150),
+            imageView.leadingAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.leadingAnchor, constant: 60),
+            imageView.trailingAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.trailingAnchor, constant: -60),
             
         ])
     }

@@ -24,7 +24,7 @@ class NetworkController
     
     func saveDataWhenClickRegister(mail: String, name: String, completion: @escaping (Error?) -> Void) {
         
-        db.collection("users").document(Auth.auth().currentUser?.email ?? "No User").setData([
+        db.collection("users").document(mail).setData([
             "mail" : mail ,
             "name" : name,
         ]) { err in
@@ -135,7 +135,7 @@ class NetworkController
     
     func saveRequest(mail: String, request: String,  completion: @escaping (Error?) -> Void) {
         
-        db.collection("reviews").document().setData([
+        db.collection("request").document().setData([
             "mail" : mail ,
             "name" : request,
         ]) { err in
